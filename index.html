@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part2Car.ae | Investor Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #1E293B; /* Lighter background */
+        color: #FFFFFF;
+        position: relative;
+      }
+      /* Apply Noto Kufi Arabic font for Arabic language */
+      html:lang(ar) body {
+        font-family: 'Noto Kufi Arabic', sans-serif;
+      }
+      /* Transparent canvas texture overlay */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('https://www.transparenttextures.com/patterns/subtle-canvas.png');
+        opacity: 0.03;
+        z-index: -1;
+      }
+      /* Transparent car parts background */
+      body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iYSIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiM0NzU1NjkiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNNjkuNiAzMC40YTggOCAwIDEwMCAxMS4yIDggOCAwIDAwMC0xMS4yem0tMTQgMGExMCAxMCAwIDAxMi42LTZsNC4yIDcgMi42IDRhMTAgMTAgMCAwMS04IDR6TTI4IDU4bC00IDYtNCAxYTEwIDEwIDAgMDAtNCA3IDggOCAwIDAwMTEuMiAwbDIuOC0yTTguNiA1Ni42bDIuOC0yLjggNC4zLTQuMi00LjItNy0yLjYtNC4zYTEwIDEwIDAgMDEtNyA0bDEgNWgxTTQwIDIwYTggOCAwIDEwMCAxNiA4IDggMCAwMDAtMTZ6bTAgMThhMTAgMTAgMCAwMTAgMjAgMTAgMTAgMCAwMDAtMjB6bTAtNDBhMTAgMTAgMCAwMTAgMjAgMTAgMTAgMCAwMDAtMjB6bTE0LTZsLTIuOCAyLjgtNC4yIDQuMyA0LjIgNyAyLjYgNC4zYTEwIDEwIDAgMDE3LTRsLTEtNWgtMW0yMy40IDEyLjZhOCA4IDAgMTExMS4yIDAgOCA4IDAgMDEtMTEuMiAwem0tMi44IDIuOGwtNC4yIDQuMyA0LjIgNyAyLjYgNC4zYTEwIDEwIDAgMDE3LTRsLTEtNWgtMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZHRoPSI0MDAiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4=');
+        opacity: 0.05;
+        z-index: -2;
+        animation: pan 60s linear infinite;
+      }
+      @keyframes pan {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 100% 100%; }
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px; /* Offset for sticky header */
+      }
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media print {
+        header, .no-print {
+          display: none !important;
+        }
+
+        body {
+          background-color: #ffffff !important;
+          color: #000000 !important;
+          font-family: 'Inter', sans-serif;
+        }
+        
+        main {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+
+        section {
+          padding-top: 2rem !important;
+          padding-bottom: 2rem !important;
+          page-break-before: always;
+        }
+        
+        #hero {
+          page-break-before: auto;
+          min-height: 95vh;
+          display: flex;
+          align-items: center;
+        }
+        
+        h1, h2, h3, h4, p, div, span, a, svg {
+          color: #000000 !important;
+        }
+        
+        .text-slate-200, .text-slate-300, .text-slate-400 {
+            color: #333333 !important;
+        }
+
+        .text-blue-500, .text-blue-400 {
+            color: #0056b3 !important;
+        }
+        
+        .recharts-wrapper {
+            -webkit-print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+
+        .glassmorphism {
+          background: #f8f9fa !important;
+          border: 1px solid #dee2e6 !important;
+          box-shadow: none !important;
+          backdrop-filter: none !important;
+          -webkit-backdrop-filter: none !important;
+        }
+        
+        body::before, body::after {
+            display: none !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
