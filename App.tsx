@@ -17,6 +17,8 @@ const translations = {
         downloadPDF: "Download PDF",
         viewAllPartners: "View All Partners",
         partnersModalTitle: "Our Valued Partners",
+        comingSoon: "Coming Soon",
+        newFeature: "In progress",
 
         // Hero Section
         heroPreTitle: "Series A Investment Opportunity",
@@ -32,7 +34,7 @@ const translations = {
         revenueModelSubtitle: "Multiple revenue streams ensuring sustainable growth",
         revenueStreams: [
             { badge: 'Recurring', title: 'Part Shelves Fees', desc: 'Suppliers pay recurring fees to list products on our virtual shelves, ensuring a stable baseline income.' },
-            { num: '12-18%', title: 'Commission Rate', desc: 'Per transaction from suppliers, scaled by volume.' },
+            { num: '12-18%', title: 'Commission Rate', desc: 'Per transaction from suppliers, scaled by volume.', status: 'coming-soon' },
             { badge: 'Premium', title: 'Supplier Plans', desc: 'Enhanced visibility, analytics, and priority placement.' },
             { badge: 'SaaS', title: 'Vendors and Repair Shop tools', desc: 'SaaS suite including analytics, inventory management, and CRM for both vendors and repair shops.' }
         ],
@@ -40,20 +42,20 @@ const translations = {
         // Core Features Section
         featuresTitle: "Core Features",
         features: [
-            { icon: '🤖', title: 'AI-Powered Search', desc: 'Advanced AI chatbot helps customers find the right part in seconds, not hours.' },
+            { icon: '🤖', title: 'AI-Powered Search', desc: 'Advanced AI chatbot helps customers find the right part in seconds, not hours.', status: 'new' },
             { icon: '⚡️', title: 'Instant Quotes', desc: 'Real-time pricing from multiple suppliers with transparent comparison.' },
-            { icon: '🛠️', title: 'Partners & Vendors AI Toolkit', desc: 'ML-driven inventory management and dynamic pricing to optimize stock and maximize profits.' },
+            { icon: '🛠️', title: 'Partners & Vendors AI Toolkit', desc: 'ML-driven inventory management and dynamic pricing to optimize stock and maximize profits.', status: 'new' },
             { icon: '📊', title: 'Datametra (RAG)', desc: 'In-house RAG AI helping vendors, partners, and users understand their data.' },
-            { icon: '🔗', title: 'Instagram Sync', desc: 'Vendors publish once on Instagram, and their parts are automatically updated on Part2Car.' },
+            { icon: '🔗', title: 'Instagram Sync', desc: 'Vendors publish once on Instagram, and their parts are automatically updated on Part2Car.', status: 'new' },
             { icon: '🏪', title: 'Vendor Storefronts', desc: 'Dedicated vendor pages with full contact details to enhance brand visibility and direct communication.' }
         ],
         
         // Partners Section
-        partnersTitle: "Strategic Partners",
+        partnersTitle: "Targetted Strategic Partners",
         insurancePartners: "Insurance Partners",
-        insurancePartnerNames: ['AXA Gulf', 'Oman Insurance', 'Al Buhaira', 'ADNIC', 'Noor Takaful', 'RSA Middle East'],
+        insurancePartnerNames: ['AXA Gulf', 'Sukoon', 'Al Buhaira', 'ADNIC', 'Noor Takaful', 'RSA Middle East', 'Emirates Insurance', 'SALAMA', 'Dubai Insurance', 'Watania', 'GIG Gulf', 'Orient Insurance', 'Allianz', 'MetLife', 'Oman Insurance'],
         globalShipping: "Global Shipping",
-        shippingPartnerNames: ['DHL Express', 'Aramex', 'FedEx', 'UPS', 'TNT Express', 'Posta Plus'],
+        shippingPartnerNames: ['DHL Express', 'Aramex', 'FedEx', 'UPS', 'TNT Express', 'Posta Plus', 'SMSA Express', 'Fetchr', 'Naqel Express', 'Zajil Express', 'iMile', 'Shyft', 'Emirates Post', 'Sky Express', 'First Flight'],
 
         // Projections Section
         projectionsTitle: "3-Year Growth Projections",
@@ -166,6 +168,8 @@ const translations = {
         downloadPDF: "تحميل PDF",
         viewAllPartners: "عرض كل الشركاء",
         partnersModalTitle: "شركاؤنا الكرام",
+        comingSoon: "قريباً",
+        newFeature: "قيد التنفيذ",
 
         // Hero Section
         heroPreTitle: "فرصة استثمارية (الفئة أ)",
@@ -181,7 +185,7 @@ const translations = {
         revenueModelSubtitle: "تدفقات إيرادات متعددة تضمن نموًا مستدامًا",
         revenueStreams: [
             { badge: 'متكرر', title: 'رسوم الرفوف الافتراضية', desc: 'يدفع الموردون رسومًا متكررة لإدراج منتجاتهم على رفوفنا الافتراضية، مما يضمن دخلاً أساسيًا ثابتًا.' },
-            { num: '12-18%', title: 'معدل العمولة', desc: 'لكل معاملة من الموردين، يتم تحديدها حسب الحجم.' },
+            { num: '12-18%', title: 'معدل العمولة', desc: 'لكل معاملة من الموردين، يتم تحديدها حسب الحجم.', status: 'coming-soon' },
             { badge: 'مميز', title: 'خطط الموردين', desc: 'رؤية معززة، تحليلات، ووضع ذو أولوية.' },
             { badge: 'برنامج كخدمة', title: 'أدوات للبائعين وورش التصليح', desc: 'مجموعة برامج كخدمة تشمل التحليلات، إدارة المخزون، وإدارة علاقات العملاء لكل من البائعين وورش التصليح.' }
         ],
@@ -189,20 +193,20 @@ const translations = {
         // Core Features Section
         featuresTitle: "الميزات الأساسية",
         features: [
-            { icon: '🤖', title: 'بحث مدعوم بالذكاء الاصطناعي', desc: 'يساعد روبوت الدردشة المتقدم العملاء في العثور على القطعة المناسبة في ثوانٍ، وليس ساعات.' },
+            { icon: '🤖', title: 'بحث مدعوم بالذكاء الاصطناعي', desc: 'يساعد روبوت الدردشة المتقدم العملاء في العثور على القطعة المناسبة في ثوانٍ، وليس ساعات.', status: 'new' },
             { icon: '⚡️', title: 'عروض أسعار فورية', desc: 'أسعار فورية من موردين متعددين مع مقارنة شفافة.' },
-            { icon: '🛠️', title: 'مجموعة أدوات الذكاء الاصطناعي للشركاء والبائعين', desc: 'إدارة مخزون تعتمد على التعلم الآلي وتسعير ديناميكي لتحسين المخزون وزيادة الأرباح.' },
+            { icon: '🛠️', title: 'مجموعة أدوات الذكاء الاصطناعي للشركاء والبائعين', desc: 'إدارة مخزون تعتمد على التعلم الآلي وتسعير ديناميكي لتحسين المخزون وزيادة الأرباح.', status: 'new' },
             { icon: '📊', title: 'داتامترا (RAG)', desc: 'ذكاء اصطناعي (RAG) داخلي يساعد البائعين والشركاء والمستخدمين على فهم بياناتهم.' },
-            { icon: '🔗', title: 'مزامنة مع انستغرام', desc: 'ينشر البائعون مرة واحدة على انستغرام، ويتم تحديث قطعهم تلقائيًا على Part2Car.' },
+            { icon: '🔗', title: 'مزامنة مع انستغرام', desc: 'ينشر البائعون مرة واحدة على انستغرام، ويتم تحديث قطعهم تلقائيًا على Part2Car.', status: 'new' },
             { icon: '🏪', title: 'واجهات متاجر البائعين', desc: 'صفحات مخصصة للبائعين مع تفاصيل اتصال كاملة لتعزيز رؤية العلامة التجارية والتواصل المباشر.' }
         ],
         
         // Partners Section
-        partnersTitle: "الشركاء الاستراتيجيون",
+        partnersTitle: "الشركاء الاستراتيجيون المستهدفون",
         insurancePartners: "شركاء التأمين",
-        insurancePartnerNames: ['أكسا الخليج', 'عمان للتأمين', 'البحيرة للتأمين', 'أدنيك', 'نور تكافل', 'آر إس إيه الشرق الأوسط'],
+        insurancePartnerNames: ['أكسا الخليج', 'سكون', 'البحيرة للتأمين', 'أدنيك', 'نور تكافل', 'آر إس إيه الشرق الأوسط', 'الإمارات للتأمين', 'سلامة', 'دبي للتأمين', 'وطنية', 'جي آي جي الخليج', 'أورينت للتأمين', 'أليانز', 'ميتلايف', 'عمان للتأمين'],
         globalShipping: "الشحن العالمي",
-        shippingPartnerNames: ['دي إتش إل إكسبرس', 'أرامكس', 'فيديكس', 'يو بي إس', 'تي إن تي إكسبرس', 'بوستا بلس'],
+        shippingPartnerNames: ['دي إتش إل إكسبرس', 'أرامكس', 'فيديكس', 'يو بي إس', 'تي إن تي إكسبرس', 'بوستا بلس', 'سمسا إكسبرس', 'فتشر', 'ناقل إكسبرس', 'زاجل إكسبرس', 'آيمايل', 'شيفت', 'بريد الإمارات', 'سكاي إكسبرس', 'فيرست فلايت'],
 
         // Projections Section
         projectionsTitle: "توقعات النمو لمدة 3 سنوات",
@@ -356,6 +360,34 @@ const SectionTitle: React.FC<{preTitle?: string, children: React.ReactNode, subT
     </div>
 );
 
+const Fireworks: React.FC = () => {
+    const fireworks = [
+      { top: '20%', left: '15%', delay: '0s' },
+      { top: '30%', left: '80%', delay: '1.2s' },
+      { top: '50%', left: '50%', delay: '0.6s' },
+      { top: '60%', left: '25%', delay: '1.8s' },
+      { top: '40%', left: '90%', delay: '2.2s' },
+      { top: '70%', left: '10%', delay: '0.3s' },
+      { top: '25%', left: '65%', delay: '1.5s' },
+    ];
+  
+    return (
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        {fireworks.map((fw, i) => (
+          <div
+            key={i}
+            className="firework-particle"
+            style={{
+              top: fw.top,
+              left: fw.left,
+              animationDelay: fw.delay,
+            }}
+          />
+        ))}
+      </div>
+    );
+};
+
 const App: React.FC = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [activeProjection, setActiveProjection] = useState('Year 1');
@@ -444,6 +476,7 @@ const App: React.FC = () => {
             <main>
                 {/* 1. Hero Section */}
                 <section id="hero" className="min-h-screen flex items-center bg-gradient-to-b from-transparent to-black/50 relative">
+                    <Fireworks />
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')] opacity-5"></div>
                     <div className="container mx-auto px-6 text-center z-10">
                         <FadeInSection>
@@ -472,7 +505,12 @@ const App: React.FC = () => {
                         <SectionTitle subTitle={content.revenueModelSubtitle}>{content.revenueModelTitle}</SectionTitle>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                             {content.revenueStreams.map((item, index) => (
-                                <div key={index} className="glassmorphism p-8 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300">
+                                <div key={index} className="relative overflow-hidden glassmorphism p-8 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300">
+                                    {item.status === 'coming-soon' && (
+                                        <div className="absolute top-4 -right-12 w-40 text-center transform rotate-45 bg-red-600 text-white text-xs font-bold py-1 shadow-lg">
+                                            {content.comingSoon}
+                                        </div>
+                                    )}
                                     {item.num ? <p className="text-5xl font-bold text-blue-500 mb-4">{item.num}</p> : <span className="inline-block bg-blue-500/20 text-blue-400 font-semibold px-4 py-1 rounded-full mb-4">{item.badge}</span>}
                                     <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
                                     <p className="text-slate-400">{item.desc}</p>
@@ -488,7 +526,12 @@ const App: React.FC = () => {
                         <SectionTitle>{content.featuresTitle}</SectionTitle>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                              {content.features.map((feature, i) => (
-                                <div key={i} className="glassmorphism p-8 rounded-xl text-center transition-all duration-300 hover:bg-white/10 hover:scale-105">
+                                <div key={i} className="relative overflow-hidden glassmorphism p-8 rounded-xl text-center transition-all duration-300 hover:bg-white/10 hover:scale-105">
+                                    {feature.status === 'new' && (
+                                        <div className="absolute top-4 -right-12 w-40 text-center transform rotate-45 bg-green-600 text-white text-xs font-bold py-1 shadow-lg">
+                                            {content.newFeature}
+                                        </div>
+                                    )}
                                     <div className="text-6xl mb-4">{feature.icon}</div>
                                     <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
                                     <p className="text-slate-400">{feature.desc}</p>
@@ -506,7 +549,7 @@ const App: React.FC = () => {
                             <div className="text-center">
                                 <h3 className="text-2xl font-semibold mb-6 text-slate-300">{content.insurancePartners}</h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
-                                    {content.insurancePartnerNames.slice(0, 3).map(name => (
+                                    {content.insurancePartnerNames.slice(0, 6).map(name => (
                                         <div key={name} className="glassmorphism p-4 rounded-lg">
                                             <p className="text-slate-300 font-medium text-md">{name}</p>
                                         </div>
@@ -516,7 +559,7 @@ const App: React.FC = () => {
                              <div className="text-center">
                                 <h3 className="text-2xl font-semibold mb-6 text-slate-300">{content.globalShipping}</h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
-                                    {content.shippingPartnerNames.slice(0, 3).map(name => (
+                                    {content.shippingPartnerNames.slice(0, 6).map(name => (
                                         <div key={name} className="glassmorphism p-4 rounded-lg">
                                             <p className="text-slate-300 font-medium text-md">{name}</p>
                                         </div>
@@ -761,7 +804,7 @@ const App: React.FC = () => {
                         <div className="space-y-8">
                              <div>
                                 <h4 className="text-xl font-semibold mb-4 text-blue-400">{content.insurancePartners}</h4>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                     {content.insurancePartnerNames.map(name => (
                                         <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
                                             <p className="text-slate-300 font-medium text-sm">{name}</p>
@@ -771,7 +814,7 @@ const App: React.FC = () => {
                             </div>
                              <div>
                                 <h4 className="text-xl font-semibold mb-4 text-blue-400">{content.globalShipping}</h4>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                      {content.shippingPartnerNames.map(name => (
                                         <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
                                             <p className="text-slate-300 font-medium text-sm">{name}</p>

@@ -71,17 +71,17 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
                     ))}
                 </nav>
 
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2 lg:space-x-4">
                     {/* Currency Switcher */}
-                    <div className="hidden lg:flex bg-slate-700/50 p-1 rounded-lg text-sm">
-                        <button onClick={() => setCurrency('USD')} className={`px-3 py-1 rounded-md ${currency === 'USD' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>USD</button>
-                        <button onClick={() => setCurrency('AED')} className={`px-3 py-1 rounded-md ${currency === 'AED' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>AED</button>
+                    <div className="flex bg-slate-700/50 p-0.5 rounded-lg text-xs font-bold">
+                        <button onClick={() => setCurrency('USD')} className={`px-2 py-1 rounded-md transition-colors ${currency === 'USD' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>$</button>
+                        <button onClick={() => setCurrency('AED')} className={`px-2 py-1 rounded-md transition-colors ${currency === 'AED' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>AED</button>
                     </div>
 
                     {/* Language Switcher */}
-                    <div className="hidden lg:flex bg-slate-700/50 p-1 rounded-lg text-sm">
-                        <button onClick={() => setLanguage('en')} className={`px-3 py-1 rounded-md ${language === 'en' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>EN</button>
-                        <button onClick={() => setLanguage('ar')} className={`px-3 py-1 rounded-md ${language === 'ar' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>AR</button>
+                    <div className="flex bg-slate-700/50 p-0.5 rounded-lg text-xs font-bold">
+                        <button onClick={() => setLanguage('en')} className={`px-2 py-1 rounded-md transition-colors ${language === 'en' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>EN</button>
+                        <button onClick={() => setLanguage('ar')} className={`px-2 py-1 rounded-md transition-colors ${language === 'ar' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>AR</button>
                     </div>
 
                     {/* PDF Download Button */}
@@ -118,18 +118,6 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
                     </nav>
                     <div className="border-t border-slate-700/50 mx-6"></div>
                     <div className="py-4 flex flex-col items-center space-y-4">
-                        <div className="flex items-center space-x-4">
-                            {/* Currency Switcher */}
-                            <div className="bg-slate-700/50 p-1 rounded-lg flex text-sm">
-                                <button onClick={() => setCurrency('USD')} className={`px-3 py-1 rounded-md ${currency === 'USD' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>USD</button>
-                                <button onClick={() => setCurrency('AED')} className={`px-3 py-1 rounded-md ${currency === 'AED' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>AED</button>
-                            </div>
-                            {/* Language Switcher */}
-                            <div className="bg-slate-700/50 p-1 rounded-lg flex text-sm">
-                                <button onClick={() => setLanguage('en')} className={`px-3 py-1 rounded-md ${language === 'en' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>EN</button>
-                                <button onClick={() => setLanguage('ar')} className={`px-3 py-1 rounded-md ${language === 'ar' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>AR</button>
-                            </div>
-                        </div>
                         {/* PDF Download Button */}
                         <button
                             onClick={() => { onDownloadPDF(); setIsMenuOpen(false); }}
