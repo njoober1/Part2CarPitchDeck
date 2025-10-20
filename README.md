@@ -1,5 +1,5 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://part2car.ae/client/layout/imgs/logo.png" />
+<img width="180" height="140" alt="GHBanner" src="https://part2car.ae/client/layout/imgs/logo.png" />
 </div>
 
 Series A Investment Opportunity
