@@ -9,6 +9,8 @@ interface HeaderProps {
   onPrint: () => void;
   printTitle: string;
   downloadTitle: string;
+  onPodcastClick: () => void;
+  podcastTitle: string;
 }
 
 const navLinksEn: NavLink[] = [
@@ -27,7 +29,7 @@ const navLinksAr: NavLink[] = [
   { name: 'الاستثمار', href: '#investment' },
 ];
 
-const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCurrency, onPrint, printTitle, downloadTitle }) => {
+const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCurrency, onPrint, printTitle, downloadTitle, onPodcastClick, podcastTitle }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     
@@ -85,6 +87,18 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
                         <button onClick={() => setLanguage('ar')} className={`px-2 py-1 rounded-md transition-colors ${language === 'ar' ? 'bg-[#517AE5]' : 'hover:bg-slate-600/50'}`}>AR</button>
                     </div>
 
+                    {/* Podcast Button */}
+                    <button
+                        onClick={onPodcastClick}
+                        className="hidden lg:flex bg-slate-700/50 p-2 rounded-lg hover:bg-slate-600/50 transition-colors"
+                        aria-label={podcastTitle}
+                        title={podcastTitle}
+                    >
+                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                    </button>
+
                     {/* Download Button */}
                     <a
                         href="https://docs.google.com/presentation/d/1bdCuK81x2O-sSv9FO0sV3xdDP4u1JHYV/edit?usp=drive_link&ouid=101891640337986263798&rtpof=true&sd=true"
@@ -133,6 +147,17 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
                     </nav>
                     <div className="border-t border-slate-700/50 mx-6"></div>
                     <div className="py-4 flex flex-col items-center space-y-4">
+                        {/* Podcast Button */}
+                        <button
+                            onClick={() => { onPodcastClick(); setIsMenuOpen(false); }}
+                            className="flex items-center space-x-2 bg-slate-700/50 p-2 px-4 rounded-lg hover:bg-slate-600/50 transition-colors w-[90%] justify-center"
+                            aria-label={podcastTitle}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                            </svg>
+                            <span>{podcastTitle}</span>
+                        </button>
                         {/* Download Button */}
                          <a
                             href="https://docs.google.com/presentation/d/1bdCuK81x2O-sSv9FO0sV3xdDP4u1JHYV/edit?usp=drive_link&ouid=101891640337986263798&rtpof=true&sd=true"

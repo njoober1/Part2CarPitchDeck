@@ -5,6 +5,7 @@ import AnimatedCounter from './components/AnimatedCounter';
 import CookieInvestorPopup from './components/CookieInvestorPopup';
 import PasswordOverlay from './components/PasswordOverlay';
 import FinancialProjections from './components/FinancialProjections';
+import PodcastPlayer from './components/PodcastPlayer';
 import { useOnScreen } from './hooks/useOnScreen';
 import type { ProjectionData } from './types';
 
@@ -17,6 +18,7 @@ const translations = {
         scheduleMeeting: "Schedule a Meeting",
         print: "Print",
         downloadDeck: "Download Deck",
+        podcast: "Podcast",
         viewAllPartners: "View All Partners",
         partnersModalTitle: "Our Valued Partners",
         comingSoon: "Coming Soon",
@@ -217,6 +219,7 @@ const translations = {
         scheduleMeeting: "حدد اجتماعًا",
         print: "طباعة",
         downloadDeck: "تحميل العرض",
+        podcast: "بودكاست",
         viewAllPartners: "عرض كل الشركاء",
         partnersModalTitle: "شركاؤنا الكرام",
         comingSoon: "قريباً",
@@ -512,6 +515,7 @@ const App: React.FC = () => {
     const [currency, setCurrency] = useState<'USD' | 'AED'>('USD');
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [isPartnersModalOpen, setIsPartnersModalOpen] = useState(false);
+    const [isPodcastPlayerOpen, setIsPodcastPlayerOpen] = useState(false);
     const [showCookiePopup, setShowCookiePopup] = useState(false);
     
     useEffect(() => {
@@ -595,6 +599,8 @@ const App: React.FC = () => {
                 onPrint={handlePrint}
                 printTitle={content.print}
                 downloadTitle={content.downloadDeck}
+                onPodcastClick={() => setIsPodcastPlayerOpen(true)}
+                podcastTitle={content.podcast}
             />
 
             {showFinancials ? (
@@ -1006,6 +1012,15 @@ const App: React.FC = () => {
                         }}
                     />
                 </>
+            )}
+
+            {isPodcastPlayerOpen && (
+                <PodcastPlayer
+                    isOpen={isPodcastPlayerOpen}
+                    onClose={() => setIsPodcastPlayerOpen(false)}
+                    audioSrc="https://upcdn.io/223k2S3/raw/Part2Car.ae__AI-Powered_Disruption_in_the_%244.m4a"
+                    title={content.podcast}
+                />
             )}
 
             {!isAuthenticated && <PasswordOverlay onSuccess={handleSuccessfulAuth} />}
