@@ -61,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 glassmorphism' : 'py-6'}`}>
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <a href="#hero" onClick={handleNavClick} className="text-2xl font-bold text-white">Part2Car<span className="text-blue-500">.ae</span></a>
+                <a href="#hero" onClick={handleNavClick} className="text-2xl font-bold text-white">Part2Car<span className="text-[#517AE5]">.ae</span></a>
 
                 <nav className="hidden lg:flex space-x-8">
                     {navLinks.map((link) => (
@@ -74,14 +74,14 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
                 <div className="flex items-center space-x-2 lg:space-x-4">
                     {/* Currency Switcher */}
                     <div className="flex bg-slate-700/50 p-0.5 rounded-lg text-xs font-bold">
-                        <button onClick={() => setCurrency('USD')} className={`px-2 py-1 rounded-md transition-colors ${currency === 'USD' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>$</button>
-                        <button onClick={() => setCurrency('AED')} className={`px-2 py-1 rounded-md transition-colors ${currency === 'AED' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>AED</button>
+                        <button onClick={() => setCurrency('USD')} className={`px-2 py-1 rounded-md transition-colors ${currency === 'USD' ? 'bg-[#517AE5]' : 'hover:bg-slate-600/50'}`}>$</button>
+                        <button onClick={() => setCurrency('AED')} className={`px-2 py-1 rounded-md transition-colors ${currency === 'AED' ? 'bg-[#517AE5]' : 'hover:bg-slate-600/50'}`}>AED</button>
                     </div>
 
                     {/* Language Switcher */}
                     <div className="flex bg-slate-700/50 p-0.5 rounded-lg text-xs font-bold">
-                        <button onClick={() => setLanguage('en')} className={`px-2 py-1 rounded-md transition-colors ${language === 'en' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>EN</button>
-                        <button onClick={() => setLanguage('ar')} className={`px-2 py-1 rounded-md transition-colors ${language === 'ar' ? 'bg-blue-600' : 'hover:bg-slate-600/50'}`}>AR</button>
+                        <button onClick={() => setLanguage('en')} className={`px-2 py-1 rounded-md transition-colors ${language === 'en' ? 'bg-[#517AE5]' : 'hover:bg-slate-600/50'}`}>EN</button>
+                        <button onClick={() => setLanguage('ar')} className={`px-2 py-1 rounded-md transition-colors ${language === 'ar' ? 'bg-[#517AE5]' : 'hover:bg-slate-600/50'}`}>AR</button>
                     </div>
 
                     {/* PDF Download Button */}

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import AnimatedCounter from './components/AnimatedCounter';
 import CookieInvestorPopup from './components/CookieInvestorPopup';
 import PasswordOverlay from './components/PasswordOverlay';
+import FinancialProjections from './components/FinancialProjections';
 import { useOnScreen } from './hooks/useOnScreen';
 import type { ProjectionData } from './types';
 
@@ -56,6 +57,8 @@ const translations = {
         insurancePartnerNames: ['AXA Gulf', 'Sukoon', 'Al Buhaira', 'ADNIC', 'Noor Takaful', 'RSA Middle East', 'Emirates Insurance', 'SALAMA', 'Dubai Insurance', 'Watania', 'GIG Gulf', 'Orient Insurance', 'Allianz', 'MetLife', 'Oman Insurance'],
         globalShipping: "Global Shipping",
         shippingPartnerNames: ['DHL Express', 'Aramex', 'FedEx', 'UPS', 'TNT Express', 'Posta Plus', 'SMSA Express', 'Fetchr', 'Naqel Express', 'Zajil Express', 'iMile', 'Shyft', 'Emirates Post', 'Sky Express', 'First Flight'],
+        partnersNoteTitle: "A Note on Partnerships",
+        partnersNoteBody: "Please note: These are our target strategic partners. We are actively engaged in discussions and aim to formalize these collaborations leading up to our inaugural partner summit in late 2025.",
 
         // Projections Section
         projectionsTitle: "3-Year Growth Projections",
@@ -69,6 +72,7 @@ const translations = {
         partners: "Partners",
         chartMonthsLabel: "Months",
         chartRevenueLabel: (currency: string) => `Projected Revenue (${currency} M)`,
+        view5YearProjections: "View 5-Year Detailed Projections",
 
         // Problem & Solution Section
         problemTitle: "The Problem",
@@ -207,6 +211,8 @@ const translations = {
         insurancePartnerNames: ['أكسا الخليج', 'سكون', 'البحيرة للتأمين', 'أدنيك', 'نور تكافل', 'آر إس إيه الشرق الأوسط', 'الإمارات للتأمين', 'سلامة', 'دبي للتأمين', 'وطنية', 'جي آي جي الخليج', 'أورينت للتأمين', 'أليانز', 'ميتلايف', 'عمان للتأمين'],
         globalShipping: "الشحن العالمي",
         shippingPartnerNames: ['دي إتش إل إكسبرس', 'أرامكس', 'فيديكس', 'يو بي إس', 'تي إن تي إكسبرس', 'بوستا بلس', 'سمسا إكسبرس', 'فتشر', 'ناقل إكسبرس', 'زاجل إكسبرس', 'آيمايل', 'شيفت', 'بريد الإمارات', 'سكاي إكسبرس', 'فيرست فلايت'],
+        partnersNoteTitle: "ملاحظة حول الشراكات",
+        partnersNoteBody: "يرجى ملاحظة: هؤلاء هم شركاؤنا الاستراتيجيون المستهدفون. نحن حاليًا في مناقشات نشطة ونهدف إلى إضفاء الطابع الرسمي على هذه الشراكات استعدادًا لقمة الشركاء الافتتاحية في أواخر عام 2025.",
 
         // Projections Section
         projectionsTitle: "توقعات النمو لمدة 3 سنوات",
@@ -220,6 +226,7 @@ const translations = {
         partners: "الشركاء",
         chartMonthsLabel: "أشهر",
         chartRevenueLabel: (currency: string) => `الإيرادات المتوقعة (مليون ${currency})`,
+        view5YearProjections: "عرض التوقعات التفصيلية لمدة 5 سنوات",
 
         // Problem & Solution Section
         problemTitle: "المشكلة",
@@ -316,16 +323,19 @@ const translations = {
 
 
 const PROJECTION_DATA: ProjectionData = {
-  'Year 1': { revenue: 0.8, customers: 1200, orders: 50000, margin: 42, virtualShelves: 360000, partners: 20 },
-  'Year 2': { revenue: 2.3, customers: 3500, orders: 150000, margin: 45, virtualShelves: 1000000, partners: 80 },
-  'Year 3': { revenue: 6.2, customers: 8000, orders: 350000, margin: 48, virtualShelves: 2000000, partners: 200 },
+  'Year 1': { revenue: 0.8, customers: 1200, orders: 50000, margin: -12.5, virtualShelves: 360000, partners: 20 },
+  'Year 2': { revenue: 2.3, customers: 3500, orders: 150000, margin: 52.2, virtualShelves: 1000000, partners: 80 },
+  'Year 3': { revenue: 6.2, customers: 8000, orders: 350000, margin: 79, virtualShelves: 2000000, partners: 200 },
 };
 
 const BASE_REVENUE_CHART_DATA = [
   { name: '0', revenue: 0 }, { name: '6', revenue: 0.4 }, { name: '12', revenue: 0.8 }, { name: '18', revenue: 1.5 }, { name: '24', revenue: 2.3 }, { name: '30', revenue: 4.0 }, { name: '36', revenue: 6.2 },
 ];
 
-const BUSINESS_MODEL_COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#8B5CF6'];
+const BRAND_COLOR = '#517AE5';
+const BRAND_COLOR_DARK = '#4367c6';
+
+const USE_OF_FUNDS_COLORS = [BRAND_COLOR, '#10B981', '#F59E0B'];
 
 const USE_OF_FUNDS_VALUES = [
     { value: 40 }, { value: 30 }, { value: 30 },
@@ -354,7 +364,7 @@ const Section: React.FC<{id: string, children: React.ReactNode, className?: stri
 
 const SectionTitle: React.FC<{preTitle?: string, children: React.ReactNode, subTitle?: string}> = ({ preTitle, children, subTitle }) => (
     <div className="text-center mb-12">
-        {preTitle && <p className="text-blue-500 font-semibold mb-2">{preTitle}</p>}
+        {preTitle && <p className="text-[#517AE5] font-semibold mb-2">{preTitle}</p>}
         <h2 className="text-3xl lg:text-5xl font-bold text-white">{children}</h2>
         {subTitle && <p className="text-slate-400 mt-4 max-w-3xl mx-auto text-lg">{subTitle}</p>}
     </div>
@@ -390,6 +400,7 @@ const Fireworks: React.FC = () => {
 
 const App: React.FC = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [showFinancials, setShowFinancials] = useState(false);
     const [activeProjection, setActiveProjection] = useState('Year 1');
     const [language, setLanguage] = useState<'en' | 'ar'>('en');
     const [currency, setCurrency] = useState<'USD' | 'AED'>('USD');
@@ -464,6 +475,10 @@ const App: React.FC = () => {
         }));
     }, [currency]);
 
+    if (showFinancials) {
+        return <FinancialProjections onBack={() => setShowFinancials(false)} />;
+    }
+
     return (
         <div className="text-white">
             <Header 
@@ -480,11 +495,11 @@ const App: React.FC = () => {
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')] opacity-5"></div>
                     <div className="container mx-auto px-6 text-center z-10">
                         <FadeInSection>
-                            <p className="text-blue-500 font-semibold mb-4">{content.heroPreTitle}</p>
+                            <p className="text-[#517AE5] font-semibold mb-4">{content.heroPreTitle}</p>
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">{content.heroTitle}</h1>
                             <p className="max-w-3xl mx-auto text-slate-300 text-lg lg:text-xl mb-10">{content.heroSubtitle}</p>
                             <div className="flex justify-center gap-4 no-print">
-                                <a href="https://calendly.com/njoober/30min" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg">{content.scheduleMeeting}</a>
+                                <a href="https://calendly.com/njoober/30min" target="_blank" rel="noopener noreferrer" className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg">{content.scheduleMeeting}</a>
                                 <button onClick={() => setIsContactModalOpen(true)} className="border-2 border-slate-500 hover:bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-lg">{content.contactUs}</button>
                             </div>
                         </FadeInSection>
@@ -495,7 +510,7 @@ const App: React.FC = () => {
                 <Section id="about" className="bg-black/25">
                    <FadeInSection className="max-w-4xl mx-auto text-center">
                         <SectionTitle>{content.aboutTitle}</SectionTitle>
-                        <p className="text-2xl lg:text-3xl text-slate-200 leading-relaxed" dangerouslySetInnerHTML={{ __html: content.aboutSubtitle.replace(/AI-powered/g, '<span class="text-blue-400">AI-powered</span>').replace(/intelligent automation/g, '<span class="text-blue-400">intelligent automation</span>').replace(/مدعوم بالذكاء الاصطناعي/g, '<span class="text-blue-400">مدعوم بالذكاء الاصطناعي</span>').replace(/الأتمتة الذكية/g, '<span class="text-blue-400">الأتمتة الذكية</span>') }}></p>
+                        <p className="text-2xl lg:text-3xl text-slate-200 leading-relaxed" dangerouslySetInnerHTML={{ __html: content.aboutSubtitle.replace(/AI-powered/g, `<span class="text-[#517AE5]">AI-powered</span>`).replace(/intelligent automation/g, `<span class="text-[#517AE5]">intelligent automation</span>`).replace(/مدعوم بالذكاء الاصطناعي/g, `<span class="text-[#517AE5]">مدعوم بالذكاء الاصطناعي</span>`).replace(/الأتمتة الذكية/g, `<span class="text-[#517AE5]">الأتمتة الذكية</span>`) }}></p>
                    </FadeInSection>
                 </Section>
                 
@@ -511,7 +526,7 @@ const App: React.FC = () => {
                                             {content.comingSoon}
                                         </div>
                                     )}
-                                    {item.num ? <p className="text-5xl font-bold text-blue-500 mb-4">{item.num}</p> : <span className="inline-block bg-blue-500/20 text-blue-400 font-semibold px-4 py-1 rounded-full mb-4">{item.badge}</span>}
+                                    {item.num ? <p className="text-5xl font-bold text-[#517AE5] mb-4">{item.num}</p> : <span className="inline-block bg-[#517AE5]/20 text-[#93adf5] font-semibold px-4 py-1 rounded-full mb-4">{item.badge}</span>}
                                     <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
                                     <p className="text-slate-400">{item.desc}</p>
                                 </div>
@@ -589,7 +604,7 @@ const App: React.FC = () => {
                                         onClick={() => setActiveProjection(year)}
                                         className={`px-6 py-3 font-semibold text-lg transition-colors duration-200 focus:outline-none ${
                                             activeProjection === year
-                                                ? 'border-b-2 border-blue-500 text-white'
+                                                ? 'border-b-2 border-[#517AE5] text-white'
                                                 : 'text-slate-400 hover:text-white'
                                         }`}
                                     >
@@ -599,7 +614,7 @@ const App: React.FC = () => {
                             </div>
                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center mb-12">
                                 {[
-                                    { label: content.projectedRevenue, value: PROJECTION_DATA[activeProjection].revenue, prefix: currency === 'USD' ? '$' : '', suffix: `M${currency === 'AED' ? ' AED' : ''}`, isFloat: true, convert: true },
+                                    { label: content.projectedRevenue, value: PROJECTION_DATA[activeProjection].revenue, prefix: currency === 'USD' ? '$' : '', suffix: `M${currency === 'AED' ? ' AED' : ''}`, convert: true },
                                     { label: content.activeCustomers, value: PROJECTION_DATA[activeProjection].customers },
                                     { label: content.monthlyOrders, value: PROJECTION_DATA[activeProjection].orders },
                                     { label: content.grossMargin, value: PROJECTION_DATA[activeProjection].margin, suffix: '%' },
@@ -608,10 +623,12 @@ const App: React.FC = () => {
                                 ].map(stat => (
                                     <div key={stat.label} className="glassmorphism p-4 rounded-lg">
                                         <p className="text-slate-400 text-sm mb-1">{stat.label}</p>
-                                        <p className="text-2xl font-bold text-blue-400">
-                                            {stat.prefix || ''}
-                                            {(stat.convert ? convertCurrency(stat.value) : stat.value).toLocaleString(undefined, { maximumFractionDigits: stat.isFloat ? 1 : 0 })}
-                                            {stat.suffix || ''}
+                                        <p className={`text-2xl font-bold ${stat.value < 0 ? 'text-red-500' : 'text-[#93adf5]'}`}>
+                                            <AnimatedCounter
+                                                end={stat.convert ? convertCurrency(stat.value) : stat.value}
+                                                prefix={stat.prefix || ''}
+                                                suffix={stat.suffix || ''}
+                                            />
                                         </p>
                                     </div>
                                 ))}
@@ -627,13 +644,21 @@ const App: React.FC = () => {
                                         <Legend wrapperStyle={{ color: '#E2E8F0', paddingTop: '20px' }} />
                                         <defs>
                                             <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8}/>
-                                                <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
+                                                <stop offset="5%" stopColor="#517AE5" stopOpacity={0.8}/>
+                                                <stop offset="95%" stopColor="#517AE5" stopOpacity={0}/>
                                             </linearGradient>
                                         </defs>
-                                        <Area type="monotone" dataKey="revenue" stroke="#3b82f6" fillOpacity={1} fill="url(#colorRevenue)" name={content.projectedRevenue} />
+                                        <Area type="monotone" dataKey="revenue" stroke="#517AE5" fillOpacity={1} fill="url(#colorRevenue)" name={content.projectedRevenue} />
                                     </AreaChart>
                                 </ResponsiveContainer>
+                            </div>
+                            <div className="text-center mt-12 no-print">
+                                <button
+                                    onClick={() => setShowFinancials(true)}
+                                    className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg"
+                                >
+                                    {content.view5YearProjections}
+                                </button>
                             </div>
                         </div>
                     </FadeInSection>
@@ -678,7 +703,7 @@ const App: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-center">
                             {content.marketStats.map((stat, i) => (
                                 <div key={i} className="glassmorphism p-8 rounded-xl transform hover:-translate-y-2 transition-transform duration-300">
-                                    <p className="text-5xl font-bold text-blue-500 mb-4">
+                                    <p className="text-5xl font-bold text-[#517AE5] mb-4">
                                         <AnimatedCounter 
                                             end={marketStatValues[i].value}
                                             prefix={marketStatValues[i].prefix || (currency === 'USD' ? '$' : '')}
@@ -729,7 +754,7 @@ const App: React.FC = () => {
                                             <div className="w-full bg-slate-700 rounded-full h-4">
                                                 <div
                                                     className="h-4 rounded-full transition-all duration-500"
-                                                    style={{ width: `${entry.value}%`, backgroundColor: BUSINESS_MODEL_COLORS[index % BUSINESS_MODEL_COLORS.length] }}
+                                                    style={{ width: `${entry.value}%`, backgroundColor: USE_OF_FUNDS_COLORS[index % USE_OF_FUNDS_COLORS.length] }}
                                                 />
                                             </div>
                                         </div>
@@ -747,7 +772,7 @@ const App: React.FC = () => {
                             <h2 className="text-4xl lg:text-5xl font-bold mb-4">{content.ctaTitle}</h2>
                             <p className="text-slate-300 text-lg mb-8">{content.ctaSubtitle}</p>
                             <div className="flex justify-center gap-4 no-print">
-                                <a href="https://calendly.com/njoober/30min" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg">{content.scheduleMeeting}</a>
+                                <a href="https://calendly.com/njoober/30min" target="_blank" rel="noopener noreferrer" className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg">{content.scheduleMeeting}</a>
                                 <button onClick={() => setIsContactModalOpen(true)} className="border-2 border-slate-500 hover:bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-lg">{content.contactUs}</button>
                             </div>
                         </div>
@@ -775,17 +800,17 @@ const App: React.FC = () => {
                         <form className="space-y-4">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1">{content.fullName}</label>
-                                <input type="text" id="name" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                <input type="text" id="name" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]" />
                             </div>
                              <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1">{content.emailAddress}</label>
-                                <input type="email" id="email" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                <input type="email" id="email" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]" />
                             </div>
                              <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-1">{content.message}</label>
-                                <textarea id="message" rows={4} className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                                <textarea id="message" rows={4} className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]"></textarea>
                             </div>
-                            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105">{content.sendMessage}</button>
+                            <button type="submit" className="w-full bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105">{content.sendMessage}</button>
                         </form>
                     </div>
                 </div>
@@ -794,33 +819,39 @@ const App: React.FC = () => {
             {isPartnersModalOpen && (
                 <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[60] no-print" onClick={() => setIsPartnersModalOpen(false)}>
                     <div
-                        className="glassmorphism rounded-xl p-8 max-w-2xl w-full m-4 animate-fade-in-up"
+                        className="glassmorphism rounded-xl p-8 max-w-2xl w-full m-4 animate-fade-in-up flex flex-col max-h-[90vh]"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="flex justify-between items-center mb-6">
+                        <div className="flex justify-between items-center mb-6 flex-shrink-0">
                             <h3 className="text-2xl font-bold">{content.partnersModalTitle}</h3>
                             <button onClick={() => setIsPartnersModalOpen(false)} className="text-slate-400 hover:text-white text-3xl leading-none">&times;</button>
                         </div>
-                        <div className="space-y-8">
-                             <div>
-                                <h4 className="text-xl font-semibold mb-4 text-blue-400">{content.insurancePartners}</h4>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                                    {content.insurancePartnerNames.map(name => (
-                                        <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
-                                            <p className="text-slate-300 font-medium text-sm">{name}</p>
-                                        </div>
-                                    ))}
+                        <div className="overflow-y-auto">
+                            <div className="space-y-8">
+                                <div>
+                                    <h4 className="text-xl font-semibold mb-4 text-[#517AE5]">{content.insurancePartners}</h4>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                        {content.insurancePartnerNames.map(name => (
+                                            <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
+                                                <p className="text-slate-300 font-medium text-sm">{name}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 className="text-xl font-semibold mb-4 text-[#517AE5]">{content.globalShipping}</h4>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                        {content.shippingPartnerNames.map(name => (
+                                            <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
+                                                <p className="text-slate-300 font-medium text-sm">{name}</p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                             <div>
-                                <h4 className="text-xl font-semibold mb-4 text-blue-400">{content.globalShipping}</h4>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                                     {content.shippingPartnerNames.map(name => (
-                                        <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
-                                            <p className="text-slate-300 font-medium text-sm">{name}</p>
-                                        </div>
-                                    ))}
-                                </div>
+                            <div className="bg-slate-800/50 border border-slate-700 p-4 rounded-lg mt-8">
+                                <h5 className="font-bold text-slate-200 mb-2">{content.partnersNoteTitle}</h5>
+                                <p className="text-sm text-slate-400">{content.partnersNoteBody}</p>
                             </div>
                         </div>
                     </div>

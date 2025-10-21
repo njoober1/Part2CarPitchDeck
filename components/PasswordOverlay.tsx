@@ -31,14 +31,14 @@ const PasswordOverlay: React.FC<PasswordOverlayProps> = ({ onSuccess }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter access code"
-              className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-center text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-center text-white focus:outline-none focus:ring-2 focus:ring-[#517AE5]"
               autoFocus
             />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105"
+            className="w-full bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105"
           >
             Unlock
           </button>

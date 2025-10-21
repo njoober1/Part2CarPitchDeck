@@ -29,7 +29,7 @@ const CookieInvestorPopup: React.FC<CookieInvestorPopupProps> = ({ isVisible, on
           </p>
           <button
             onClick={onAccept}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-transform duration-200 hover:scale-105 text-md"
+            className="w-full bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-2 px-6 rounded-lg transition-transform duration-200 hover:scale-105 text-md"
             aria-label={content.accept}
           >
             {content.accept}
