@@ -833,7 +833,7 @@ const App: React.FC = () => {
                                             <p className="text-5xl font-bold text-[#517AE5] mb-4">
                                                 <AnimatedCounter 
                                                     end={marketStatValues[i].value}
-                                                    prefix={marketStatValues[i].prefix || (currency === 'USD' ? '$' : '')}
+                                                    prefix={marketStatValues[i].prefix || (currency === 'USD' && marketStatValues[i].unit !== '%' ? '$' : '')}
                                                     suffix={`${marketStatValues[i].unit || ''}${currency === 'AED' && (marketStatValues[i].unit === 'B' || marketStatValues[i].unit === 'M') ? ' AED' : ''}`}
                                                 />
                                             </p>

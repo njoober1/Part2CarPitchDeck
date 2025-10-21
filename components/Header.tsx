@@ -101,7 +101,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
 
                     {/* Download Button */}
                     <a
-                        href="https://docs.google.com/presentation/d/1bdCuK81x2O-sSv9FO0sV3xdDP4u1JHYV/edit?usp=drive_link&ouid=101891640337986263798&rtpof=true&sd=true"
+                        href="https://docs.google.com/presentation/d/1IQzhVq-d22LdC351cJtN_oo-Q9nohXo3/edit?usp=drive_link&ouid=101891640337986263798&rtpof=true&sd=true"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hidden lg:flex bg-slate-700/50 p-2 rounded-lg hover:bg-slate-600/50 transition-colors"
@@ -160,7 +160,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
                         </button>
                         {/* Download Button */}
                          <a
-                            href="https://docs.google.com/presentation/d/1bdCuK81x2O-sSv9FO0sV3xdDP4u1JHYV/edit?usp=drive_link&ouid=101891640337986263798&rtpof=true&sd=true"
+                            href="https://docs.google.com/presentation/d/1IQzhVq-d22LdC351cJtN_oo-Q9nohXo3/edit?usp=drive_link&ouid=101891640337986263798&rtpof=true&sd=true"
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setIsMenuOpen(false)}
