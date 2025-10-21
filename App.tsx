@@ -399,7 +399,21 @@ const Fireworks: React.FC = () => {
 };
 
 const App: React.FC = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const checkAuth = () => {
+        const authTimestamp = localStorage.getItem('authTimestamp');
+        if (authTimestamp) {
+            const lastAuthTime = parseInt(authTimestamp, 10);
+            const tenMinutesInMillis = 10 * 60 * 1000;
+            if (Date.now() - lastAuthTime < tenMinutesInMillis) {
+                return true;
+            } else {
+                localStorage.removeItem('authTimestamp');
+            }
+        }
+        return false;
+    };
+
+    const [isAuthenticated, setIsAuthenticated] = useState(checkAuth);
     const [showFinancials, setShowFinancials] = useState(false);
     const [activeProjection, setActiveProjection] = useState('Year 1');
     const [language, setLanguage] = useState<'en' | 'ar'>('en');
@@ -432,6 +446,11 @@ const App: React.FC = () => {
     const handleAcceptCookies = () => {
         localStorage.setItem('investor_consent', 'true');
         setShowCookiePopup(false);
+    };
+
+    const handleSuccessfulAuth = () => {
+        localStorage.setItem('authTimestamp', Date.now().toString());
+        setIsAuthenticated(true);
     };
 
     const content = translations[language];
@@ -868,7 +887,7 @@ const App: React.FC = () => {
                 }}
             />
 
-            {!isAuthenticated && <PasswordOverlay onSuccess={() => setIsAuthenticated(true)} />}
+            {!isAuthenticated && <PasswordOverlay onSuccess={handleSuccessfulAuth} />}
         </div>
     );
 };
