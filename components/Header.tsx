@@ -6,7 +6,9 @@ interface HeaderProps {
   setLanguage: (lang: 'en' | 'ar') => void;
   currency: 'USD' | 'AED';
   setCurrency: (curr: 'USD' | 'AED') => void;
-  onDownloadPDF: () => void;
+  onPrint: () => void;
+  printTitle: string;
+  downloadTitle: string;
 }
 
 const navLinksEn: NavLink[] = [
@@ -25,12 +27,11 @@ const navLinksAr: NavLink[] = [
   { name: 'الاستثمار', href: '#investment' },
 ];
 
-const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCurrency, onDownloadPDF }) => {
+const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCurrency, onPrint, printTitle, downloadTitle }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     
     const navLinks = language === 'ar' ? navLinksAr : navLinksEn;
-    const downloadPDFTitle = language === 'en' ? 'Download PDF' : 'تحميل PDF';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -63,9 +64,9 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <a href="#hero" onClick={handleNavClick} className="text-2xl font-bold text-white">Part2Car<span className="text-[#517AE5]">.ae</span></a>
 
-                <nav className="hidden lg:flex space-x-8">
+                <nav className="hidden lg:flex">
                     {navLinks.map((link) => (
-                        <a key={link.name} href={link.href} onClick={handleNavClick} className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">
+                        <a key={link.name} href={link.href} onClick={handleNavClick} className="text-slate-300 hover:text-white transition-colors duration-200 font-medium px-5">
                             {link.name}
                         </a>
                     ))}
@@ -84,15 +85,29 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
                         <button onClick={() => setLanguage('ar')} className={`px-2 py-1 rounded-md transition-colors ${language === 'ar' ? 'bg-[#517AE5]' : 'hover:bg-slate-600/50'}`}>AR</button>
                     </div>
 
-                    {/* PDF Download Button */}
-                    <button
-                        onClick={onDownloadPDF}
+                    {/* Download Button */}
+                    <a
+                        href="https://docs.google.com/presentation/d/1bdCuK81x2O-sSv9FO0sV3xdDP4u1JHYV/edit?usp=drive_link&ouid=101891640337986263798&rtpof=true&sd=true"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="hidden lg:flex bg-slate-700/50 p-2 rounded-lg hover:bg-slate-600/50 transition-colors"
-                        aria-label={downloadPDFTitle}
-                        title={downloadPDFTitle}
+                        aria-label={downloadTitle}
+                        title={downloadTitle}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </a>
+
+                    {/* Print Button */}
+                    <button
+                        onClick={onPrint}
+                        className="hidden lg:flex bg-slate-700/50 p-2 rounded-lg hover:bg-slate-600/50 transition-colors"
+                        aria-label={printTitle}
+                        title={printTitle}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
                         </svg>
                     </button>
 
@@ -111,23 +126,37 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, currency, setCur
                 <div className="lg:hidden mt-4 glassmorphism">
                     <nav className="flex flex-col items-center space-y-4 py-4">
                          {navLinks.map((link) => (
-                            <a key={link.name} href={link.href} onClick={handleNavClick} className="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-lg">
+                            <a key={link.name} href={link.href} onClick={handleNavClick} className="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-lg px-5">
                                 {link.name}
                             </a>
                         ))}
                     </nav>
                     <div className="border-t border-slate-700/50 mx-6"></div>
                     <div className="py-4 flex flex-col items-center space-y-4">
-                        {/* PDF Download Button */}
-                        <button
-                            onClick={() => { onDownloadPDF(); setIsMenuOpen(false); }}
-                            className="flex items-center space-x-2 bg-slate-700/50 p-2 px-4 rounded-lg hover:bg-slate-600/50 transition-colors"
-                            aria-label={downloadPDFTitle}
+                        {/* Download Button */}
+                         <a
+                            href="https://docs.google.com/presentation/d/1bdCuK81x2O-sSv9FO0sV3xdDP4u1JHYV/edit?usp=drive_link&ouid=101891640337986263798&rtpof=true&sd=true"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="flex items-center space-x-2 bg-slate-700/50 p-2 px-4 rounded-lg hover:bg-slate-600/50 transition-colors w-[90%] justify-center"
+                            aria-label={downloadTitle}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                             </svg>
-                            <span>{downloadPDFTitle}</span>
+                            <span>{downloadTitle}</span>
+                        </a>
+                        {/* Print Button */}
+                        <button
+                            onClick={() => { onPrint(); setIsMenuOpen(false); }}
+                            className="flex items-center space-x-2 bg-slate-700/50 p-2 px-4 rounded-lg hover:bg-slate-600/50 transition-colors w-[90%] justify-center"
+                            aria-label={printTitle}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                            </svg>
+                            <span>{printTitle}</span>
                         </button>
                     </div>
                 </div>

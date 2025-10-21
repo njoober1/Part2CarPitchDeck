@@ -15,7 +15,8 @@ const translations = {
         // Meta & Buttons
         contactUs: "Contact Us",
         scheduleMeeting: "Schedule a Meeting",
-        downloadPDF: "Download PDF",
+        print: "Print",
+        downloadDeck: "Download Deck",
         viewAllPartners: "View All Partners",
         partnersModalTitle: "Our Valued Partners",
         comingSoon: "Coming Soon",
@@ -155,8 +156,10 @@ const translations = {
         // Contact Modal
         modalTitle: "Contact Us",
         modalSubtitle: "Have a question or want to discuss the opportunity? Fill out the form below.",
+        modalBenefit: "P.S. Early investors get bragging rights for life. Just saying.",
         fullName: "Full Name",
         emailAddress: "Email Address",
+        mobileNumber: "Mobile Number",
         message: "Message",
         sendMessage: "Send Message",
         
@@ -164,12 +167,56 @@ const translations = {
         cookieTitle: "🧐 Just Checking...",
         cookieMessage: "We use cookies to ensure this pitch deck is as revolutionary as our business model. By clicking below, you're confirming you have an eye for billion-dollar opportunities. Are you in?",
         cookieAccept: "I'm a Visionary Investor",
+
+        // Financials Page
+        financials: {
+            title: "Financial Projections",
+            backToPitchDeck: "← Back to Pitch Deck",
+            subtitle: "5-Year Growth Strategy (2026-2030)",
+            agentGrowth: "Agent Growth",
+            agentGrowthPercent: "+543%",
+            revenueGrowth: "Global Revenue Growth",
+            revenueGrowthPercent: "+973%",
+            finalROI: "Final ROI",
+            finalROIStat: "18%",
+            finalROINote: "From -1% in 2026",
+            profit2030: "2030 Profit",
+            profit2030Note: "Net profit margin",
+            chart1Title: "Global Revenue vs Expenses",
+            chart2Title: "Revenue Streams Breakdown",
+            chart3Title: "Agent Growth",
+            chart4Title: "ROI Progression",
+            yAxisAmount: (currency: string) => `Amount (${currency}M)`,
+            yAxisROI: "ROI (%)",
+            legendProfit: "Profit",
+            legendGlobalRevenue: "Global Revenue",
+            legendAgentRevenue: "Agent Revenue",
+            legendOtherRevenue: "Other Revenue",
+            legendExpenses: "Expenses",
+            legendAgents: "Agents",
+            legendNetROI: "Net ROI",
+            tableTitle: "Detailed Projections",
+            tableYear: "Year",
+            tableAgents: "Agents",
+            tableAgentRevenue: "Agent Revenue",
+            tableOtherRevenue: "Other Revenue",
+            tableGlobalRevenue: "Global Revenue",
+            tableExpenses: "Expenses",
+            tableProfit: "Profit",
+            tableGrossMargin: "Gross Margin",
+            tableROI: "ROI",
+            footerNoteTitle: "Note:",
+            footerNoteBody: "Agent revenue represents royalty fees per agent per year. Other revenue streams include additional business activities with consistent year-over-year growth.",
+            tooltipROI: "ROI",
+            tooltipAgents: "Agents",
+        },
     },
     ar: {
         // Meta & Buttons
         contactUs: "اتصل بنا",
         scheduleMeeting: "حدد اجتماعًا",
-        downloadPDF: "تحميل PDF",
+        print: "طباعة",
+        downloadDeck: "تحميل العرض",
         viewAllPartners: "عرض كل الشركاء",
         partnersModalTitle: "شركاؤنا الكرام",
         comingSoon: "قريباً",
@@ -309,8 +356,10 @@ const translations = {
         // Contact Modal
         modalTitle: "اتصل بنا",
         modalSubtitle: "لديك سؤال أو ترغب في مناقشة الفرصة؟ املأ النموذج أدناه.",
+        modalBenefit: "ملاحظة: المستثمرون الأوائل يحصلون على حقوق التفاخر مدى الحياة. مجرد معلومة.",
         fullName: "الاسم الكامل",
         emailAddress: "البريد الإلكتروني",
+        mobileNumber: "رقم الجوال",
         message: "الرسالة",
         sendMessage: "إرسال الرسالة",
 
@@ -318,6 +367,49 @@ const translations = {
         cookieTitle: "🧐 لحظة من فضلك...",
         cookieMessage: "نحن نستخدم ملفات تعريف الارتباط (الكوكيز) لنتأكد من أن هذا العرض التقديمي ثوري مثل نموذج عملنا. بالنقر أدناه، فأنت تؤكد أن لديك نظرة ثاقبة للفرص المليارية. هل أنت معنا؟",
         cookieAccept: "أنا مستثمر صاحب رؤية",
+        
+        // Financials Page
+        financials: {
+            title: "التوقعات المالية",
+            backToPitchDeck: "العودة إلى العرض التقديمي →",
+            subtitle: "استراتيجية النمو لمدة 5 سنوات (2026-2030)",
+            agentGrowth: "نمو الوكلاء",
+            agentGrowthPercent: "+543%",
+            revenueGrowth: "نمو الإيرادات العالمية",
+            revenueGrowthPercent: "+973%",
+            finalROI: "العائد على الاستثمار النهائي",
+            finalROIStat: "18%",
+            finalROINote: "من -1% في 2026",
+            profit2030: "أرباح 2030",
+            profit2030Note: "هامش الربح الصافي",
+            chart1Title: "الإيرادات العالمية مقابل النفقات",
+            chart2Title: "تفصيل مصادر الإيرادات",
+            chart3Title: "نمو الوكلاء",
+            chart4Title: "تطور العائد على الاستثمار",
+            yAxisAmount: (currency: string) => `المبلغ (مليون ${currency})`,
+            yAxisROI: "العائد (%)",
+            legendProfit: "الربح",
+            legendGlobalRevenue: "الإيرادات العالمية",
+            legendAgentRevenue: "إيرادات الوكلاء",
+            legendOtherRevenue: "إيرادات أخرى",
+            legendExpenses: "النفقات",
+            legendAgents: "الوكلاء",
+            legendNetROI: "صافي العائد على الاستثمار",
+            tableTitle: "التوقعات التفصيلية",
+            tableYear: "السنة",
+            tableAgents: "الوكلاء",
+            tableAgentRevenue: "إيرادات الوكلاء",
+            tableOtherRevenue: "إيرادات أخرى",
+            tableGlobalRevenue: "الإيرادات العالمية",
+            tableExpenses: "النفقات",
+            tableProfit: "الربح",
+            tableGrossMargin: "هامش الربح الإجمالي",
+            tableROI: "العائد على الاستثمار",
+            footerNoteTitle: "ملاحظة:",
+            footerNoteBody: "تمثل إيرادات الوكلاء رسوم الامتياز لكل وكيل سنويًا. تشمل مصادر الإيرادات الأخرى أنشطة تجارية إضافية مع نمو سنوي ثابت.",
+            tooltipROI: "العائد على الاستثمار",
+            tooltipAgents: "الوكلاء",
+        },
     }
 };
 
@@ -428,10 +520,9 @@ const App: React.FC = () => {
     }, [language]);
     
     useEffect(() => {
-        if (isAuthenticated) {
-            window.scrollTo(0, 0);
-        }
-    }, [isAuthenticated]);
+        // Ensure the page is scrolled to the top on initial load.
+        window.scrollTo(0, 0);
+    }, []); // Empty dependency array ensures this runs only once on mount.
     
     useEffect(() => {
         const consent = localStorage.getItem('investor_consent');
@@ -467,7 +558,7 @@ const App: React.FC = () => {
         return `${symbol}${num}${unit}${code}`;
     };
 
-    const handleDownloadPDF = () => {
+    const handlePrint = () => {
         window.print();
     };
     
@@ -494,10 +585,6 @@ const App: React.FC = () => {
         }));
     }, [currency]);
 
-    if (showFinancials) {
-        return <FinancialProjections onBack={() => setShowFinancials(false)} />;
-    }
-
     return (
         <div className="text-white">
             <Header 
@@ -505,387 +592,421 @@ const App: React.FC = () => {
                 setLanguage={setLanguage} 
                 currency={currency} 
                 setCurrency={setCurrency} 
-                onDownloadPDF={handleDownloadPDF}
+                onPrint={handlePrint}
+                printTitle={content.print}
+                downloadTitle={content.downloadDeck}
             />
-            <main>
-                {/* 1. Hero Section */}
-                <section id="hero" className="min-h-screen flex items-center bg-gradient-to-b from-transparent to-black/50 relative">
-                    <Fireworks />
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')] opacity-5"></div>
-                    <div className="container mx-auto px-6 text-center z-10">
-                        <FadeInSection>
-                            <p className="text-[#517AE5] font-semibold mb-4">{content.heroPreTitle}</p>
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">{content.heroTitle}</h1>
-                            <p className="max-w-3xl mx-auto text-slate-300 text-lg lg:text-xl mb-10">{content.heroSubtitle}</p>
-                            <div className="flex justify-center gap-4 no-print">
-                                <a href="https://calendly.com/njoober/30min" target="_blank" rel="noopener noreferrer" className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg">{content.scheduleMeeting}</a>
-                                <button onClick={() => setIsContactModalOpen(true)} className="border-2 border-slate-500 hover:bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-lg">{content.contactUs}</button>
+
+            {showFinancials ? (
+                <FinancialProjections
+                    onBack={() => setShowFinancials(false)}
+                    language={language}
+                    currency={currency}
+                    content={content.financials}
+                />
+            ) : (
+                <>
+                    <main>
+                        {/* 1. Hero Section */}
+                        <section id="hero" className="min-h-screen flex items-center bg-gradient-to-b from-transparent to-black/50 relative">
+                            <Fireworks />
+                            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')] opacity-5"></div>
+                            <div className="container mx-auto px-6 text-center z-10">
+                                <FadeInSection>
+                                    <p className="text-[#517AE5] font-semibold mb-4">{content.heroPreTitle}</p>
+                                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">{content.heroTitle}</h1>
+                                    <p className="max-w-3xl mx-auto text-slate-300 text-lg lg:text-xl mb-10">{content.heroSubtitle}</p>
+                                    <div className="flex justify-center gap-4 no-print">
+                                        <a href="https://calendly.com/njoober/30min" target="_blank" rel="noopener noreferrer" className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg">{content.scheduleMeeting}</a>
+                                        <button onClick={() => setIsContactModalOpen(true)} className="border-2 border-slate-500 hover:bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-lg">{content.contactUs}</button>
+                                    </div>
+                                </FadeInSection>
                             </div>
-                        </FadeInSection>
-                    </div>
-                </section>
+                        </section>
 
-                {/* 2. About Section */}
-                <Section id="about" className="bg-black/25">
-                   <FadeInSection className="max-w-4xl mx-auto text-center">
-                        <SectionTitle>{content.aboutTitle}</SectionTitle>
-                        <p className="text-2xl lg:text-3xl text-slate-200 leading-relaxed" dangerouslySetInnerHTML={{ __html: content.aboutSubtitle.replace(/AI-powered/g, `<span class="text-[#517AE5]">AI-powered</span>`).replace(/intelligent automation/g, `<span class="text-[#517AE5]">intelligent automation</span>`).replace(/مدعوم بالذكاء الاصطناعي/g, `<span class="text-[#517AE5]">مدعوم بالذكاء الاصطناعي</span>`).replace(/الأتمتة الذكية/g, `<span class="text-[#517AE5]">الأتمتة الذكية</span>`) }}></p>
-                   </FadeInSection>
-                </Section>
-                
-                {/* 3. Revenue Model Section */}
-                <Section id="revenue">
-                    <FadeInSection>
-                        <SectionTitle subTitle={content.revenueModelSubtitle}>{content.revenueModelTitle}</SectionTitle>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                            {content.revenueStreams.map((item, index) => (
-                                <div key={index} className="relative overflow-hidden glassmorphism p-8 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300">
-                                    {item.status === 'coming-soon' && (
-                                        <div className="absolute top-4 -right-12 w-40 text-center transform rotate-45 bg-red-600 text-white text-xs font-bold py-1 shadow-lg">
-                                            {content.comingSoon}
-                                        </div>
-                                    )}
-                                    {item.num ? <p className="text-5xl font-bold text-[#517AE5] mb-4">{item.num}</p> : <span className="inline-block bg-[#517AE5]/20 text-[#93adf5] font-semibold px-4 py-1 rounded-full mb-4">{item.badge}</span>}
-                                    <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
-                                    <p className="text-slate-400">{item.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </FadeInSection>
-                </Section>
-                
-                {/* 4. Core Features Section */}
-                <Section id="features" className="bg-black/25">
-                    <FadeInSection>
-                        <SectionTitle>{content.featuresTitle}</SectionTitle>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                             {content.features.map((feature, i) => (
-                                <div key={i} className="relative overflow-hidden glassmorphism p-8 rounded-xl text-center transition-all duration-300 hover:bg-white/10 hover:scale-105">
-                                    {feature.status === 'new' && (
-                                        <div className="absolute top-4 -right-12 w-40 text-center transform rotate-45 bg-green-600 text-white text-xs font-bold py-1 shadow-lg">
-                                            {content.newFeature}
-                                        </div>
-                                    )}
-                                    <div className="text-6xl mb-4">{feature.icon}</div>
-                                    <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-                                    <p className="text-slate-400">{feature.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </FadeInSection>
-                </Section>
-
-                {/* 5. Strategic Partners Section */}
-                <Section id="partners">
-                    <FadeInSection>
-                        <SectionTitle>{content.partnersTitle}</SectionTitle>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-12">
-                            <div className="text-center">
-                                <h3 className="text-2xl font-semibold mb-6 text-slate-300">{content.insurancePartners}</h3>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
-                                    {content.insurancePartnerNames.slice(0, 6).map(name => (
-                                        <div key={name} className="glassmorphism p-4 rounded-lg">
-                                            <p className="text-slate-300 font-medium text-md">{name}</p>
+                        {/* 2. About Section */}
+                        <Section id="about" className="bg-black/25">
+                           <FadeInSection className="max-w-4xl mx-auto text-center">
+                                <SectionTitle>{content.aboutTitle}</SectionTitle>
+                                <p className="text-2xl lg:text-3xl text-slate-200 leading-relaxed" dangerouslySetInnerHTML={{ __html: content.aboutSubtitle.replace(/AI-powered/g, `<span class="text-[#517AE5]">AI-powered</span>`).replace(/intelligent automation/g, `<span class="text-[#517AE5]">intelligent automation</span>`).replace(/مدعوم بالذكاء الاصطناعي/g, `<span class="text-[#517AE5]">مدعوم بالذكاء الاصطناعي</span>`).replace(/الأتمتة الذكية/g, `<span class="text-[#517AE5]">الأتمتة الذكية</span>`) }}></p>
+                           </FadeInSection>
+                        </Section>
+                        
+                        {/* 3. Revenue Model Section */}
+                        <Section id="revenue">
+                            <FadeInSection>
+                                <SectionTitle subTitle={content.revenueModelSubtitle}>{content.revenueModelTitle}</SectionTitle>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                                    {content.revenueStreams.map((item, index) => (
+                                        <div key={index} className="relative overflow-hidden glassmorphism p-8 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300">
+                                            {item.status === 'coming-soon' && (
+                                                <div className="absolute top-4 -right-12 w-40 text-center transform rotate-45 bg-red-600 text-white text-xs font-bold py-1 shadow-lg">
+                                                    {content.comingSoon}
+                                                </div>
+                                            )}
+                                            {item.num ? <p className="text-5xl font-bold text-[#517AE5] mb-4">{item.num}</p> : <span className="inline-block bg-[#517AE5]/20 text-[#93adf5] font-semibold px-4 py-1 rounded-full mb-4">{item.badge}</span>}
+                                            <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+                                            <p className="text-slate-400">{item.desc}</p>
                                         </div>
                                     ))}
                                 </div>
-                            </div>
-                             <div className="text-center">
-                                <h3 className="text-2xl font-semibold mb-6 text-slate-300">{content.globalShipping}</h3>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
-                                    {content.shippingPartnerNames.slice(0, 6).map(name => (
-                                        <div key={name} className="glassmorphism p-4 rounded-lg">
-                                            <p className="text-slate-300 font-medium text-md">{name}</p>
+                            </FadeInSection>
+                        </Section>
+                        
+                        {/* 4. Core Features Section */}
+                        <Section id="features" className="bg-black/25">
+                            <FadeInSection>
+                                <SectionTitle>{content.featuresTitle}</SectionTitle>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                     {content.features.map((feature, i) => (
+                                        <div key={i} className="relative overflow-hidden glassmorphism p-8 rounded-xl text-center transition-all duration-300 hover:bg-white/10 hover:scale-105">
+                                            {feature.status === 'new' && (
+                                                <div className="absolute top-4 -right-12 w-40 text-center transform rotate-45 bg-green-600 text-white text-xs font-bold py-1 shadow-lg">
+                                                    {content.newFeature}
+                                                </div>
+                                            )}
+                                            <div className="text-6xl mb-4">{feature.icon}</div>
+                                            <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+                                            <p className="text-slate-400">{feature.desc}</p>
                                         </div>
                                     ))}
                                 </div>
-                            </div>
-                        </div>
-                        <div className="text-center no-print">
-                            <button onClick={() => setIsPartnersModalOpen(true)} className="bg-slate-700/50 hover:bg-slate-600/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-lg">
-                                {content.viewAllPartners}
-                            </button>
-                        </div>
-                    </FadeInSection>
-                </Section>
+                            </FadeInSection>
+                        </Section>
 
-                {/* 6. Projections Section */}
-                <Section id="projections" className="bg-black/25">
-                    <FadeInSection>
-                        <SectionTitle subTitle={content.projectionsSubtitle}>
-                            {content.projectionsTitle}
-                        </SectionTitle>
-                        <div className="max-w-7xl mx-auto">
-                            <div className="flex justify-center mb-8 border-b border-slate-700">
-                                {Object.keys(PROJECTION_DATA).map((year) => (
-                                    <button
-                                        key={year}
-                                        onClick={() => setActiveProjection(year)}
-                                        className={`px-6 py-3 font-semibold text-lg transition-colors duration-200 focus:outline-none ${
-                                            activeProjection === year
-                                                ? 'border-b-2 border-[#517AE5] text-white'
-                                                : 'text-slate-400 hover:text-white'
-                                        }`}
-                                    >
-                                        {content.yearKeys[year]}
+                        {/* 5. Strategic Partners Section */}
+                        <Section id="partners">
+                            <FadeInSection>
+                                <SectionTitle>{content.partnersTitle}</SectionTitle>
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-12">
+                                    <div className="text-center">
+                                        <h3 className="text-2xl font-semibold mb-6 text-slate-300">{content.insurancePartners}</h3>
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
+                                            {content.insurancePartnerNames.slice(0, 6).map(name => (
+                                                <div key={name} className="glassmorphism p-4 rounded-lg">
+                                                    <p className="text-slate-300 font-medium text-md">{name}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                     <div className="text-center">
+                                        <h3 className="text-2xl font-semibold mb-6 text-slate-300">{content.globalShipping}</h3>
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center">
+                                            {content.shippingPartnerNames.slice(0, 6).map(name => (
+                                                <div key={name} className="glassmorphism p-4 rounded-lg">
+                                                    <p className="text-slate-300 font-medium text-md">{name}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="text-center no-print">
+                                    <button onClick={() => setIsPartnersModalOpen(true)} className="bg-slate-700/50 hover:bg-slate-600/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-lg">
+                                        {content.viewAllPartners}
                                     </button>
-                                ))}
-                            </div>
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center mb-12">
-                                {[
-                                    { label: content.projectedRevenue, value: PROJECTION_DATA[activeProjection].revenue, prefix: currency === 'USD' ? '$' : '', suffix: `M${currency === 'AED' ? ' AED' : ''}`, convert: true },
-                                    { label: content.activeCustomers, value: PROJECTION_DATA[activeProjection].customers },
-                                    { label: content.monthlyOrders, value: PROJECTION_DATA[activeProjection].orders },
-                                    { label: content.grossMargin, value: PROJECTION_DATA[activeProjection].margin, suffix: '%' },
-                                    { label: content.virtualShelves, value: PROJECTION_DATA[activeProjection].virtualShelves },
-                                    { label: content.partners, value: PROJECTION_DATA[activeProjection].partners },
-                                ].map(stat => (
-                                    <div key={stat.label} className="glassmorphism p-4 rounded-lg">
-                                        <p className="text-slate-400 text-sm mb-1">{stat.label}</p>
-                                        <p className={`text-2xl font-bold ${stat.value < 0 ? 'text-red-500' : 'text-[#93adf5]'}`}>
-                                            <AnimatedCounter
-                                                end={stat.convert ? convertCurrency(stat.value) : stat.value}
-                                                prefix={stat.prefix || ''}
-                                                suffix={stat.suffix || ''}
-                                            />
-                                        </p>
+                                </div>
+                            </FadeInSection>
+                        </Section>
+
+                        {/* 6. Projections Section */}
+                        <Section id="projections" className="bg-black/25">
+                            <FadeInSection>
+                                <SectionTitle subTitle={content.projectionsSubtitle}>
+                                    {content.projectionsTitle}
+                                </SectionTitle>
+                                <div className="max-w-7xl mx-auto">
+                                    <div className="flex justify-center mb-8 border-b border-slate-700">
+                                        {Object.keys(PROJECTION_DATA).map((year) => (
+                                            <button
+                                                key={year}
+                                                onClick={() => setActiveProjection(year)}
+                                                className={`px-6 py-3 font-semibold text-lg transition-colors duration-200 focus:outline-none ${
+                                                    activeProjection === year
+                                                        ? 'border-b-2 border-[#517AE5] text-white'
+                                                        : 'text-slate-400 hover:text-white'
+                                                }`}
+                                            >
+                                                {content.yearKeys[year]}
+                                            </button>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
-
-                            <div className="h-96 glassmorphism p-4 rounded-xl">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <AreaChart data={revenueChartData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-                                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
-                                        <XAxis dataKey="name" stroke="#94A3B8" label={{ value: content.chartMonthsLabel, position: 'insideBottom', offset: -15, fill: '#94A3B8' }} />
-                                        <YAxis stroke="#94A3B8" label={{ value: content.chartRevenueLabel(currency), angle: -90, position: 'insideLeft', fill: '#94A3B8' }} />
-                                        <Tooltip contentStyle={{ backgroundColor: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(5px)' }} />
-                                        <Legend wrapperStyle={{ color: '#E2E8F0', paddingTop: '20px' }} />
-                                        <defs>
-                                            <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="5%" stopColor="#517AE5" stopOpacity={0.8}/>
-                                                <stop offset="95%" stopColor="#517AE5" stopOpacity={0}/>
-                                            </linearGradient>
-                                        </defs>
-                                        <Area type="monotone" dataKey="revenue" stroke="#517AE5" fillOpacity={1} fill="url(#colorRevenue)" name={content.projectedRevenue} />
-                                    </AreaChart>
-                                </ResponsiveContainer>
-                            </div>
-                            <div className="text-center mt-12 no-print">
-                                <button
-                                    onClick={() => setShowFinancials(true)}
-                                    className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg"
-                                >
-                                    {content.view5YearProjections}
-                                </button>
-                            </div>
-                        </div>
-                    </FadeInSection>
-                </Section>
-                
-                {/* 7. Problem & Solution Section */}
-                <Section id="problem-solution">
-                    <FadeInSection>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                             <div>
-                                <h2 className="text-3xl lg:text-4xl font-bold mb-4">{content.problemTitle}</h2>
-                                <p className="text-slate-400 mb-8 text-lg">{content.problemSubtitle}</p>
-                                <ul className="space-y-4">
-                                    {content.problems.map((item, i) => (
-                                        <li key={i} className="flex items-start">
-                                            <svg className="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                            <span className="text-slate-300">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                             <div className="glassmorphism p-8 rounded-xl mt-8 lg:mt-0">
-                                <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-green-400">{content.solutionTitle}</h2>
-                                <p className="text-slate-300 mb-8 text-lg">{content.solutionSubtitle}</p>
-                                <ul className="space-y-4">
-                                    {content.solutions.map((item, i) => (
-                                        <li key={i} className="flex items-start">
-                                            <svg className="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                            <span className="text-slate-200">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </FadeInSection>
-                </Section>
-
-                {/* 8. Market Section */}
-                <Section id="market" className="bg-black/25">
-                    <FadeInSection>
-                        <SectionTitle subTitle={content.marketSubtitle}>{content.marketTitle}</SectionTitle>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-center">
-                            {content.marketStats.map((stat, i) => (
-                                <div key={i} className="glassmorphism p-8 rounded-xl transform hover:-translate-y-2 transition-transform duration-300">
-                                    <p className="text-5xl font-bold text-[#517AE5] mb-4">
-                                        <AnimatedCounter 
-                                            end={marketStatValues[i].value}
-                                            prefix={marketStatValues[i].prefix || (currency === 'USD' ? '$' : '')}
-                                            suffix={`${marketStatValues[i].unit || ''}${currency === 'AED' && (marketStatValues[i].unit === 'B' || marketStatValues[i].unit === 'M') ? ' AED' : ''}`}
-                                        />
-                                    </p>
-                                    <h3 className="text-xl font-semibold text-slate-300">{stat.label}</h3>
-                                </div>
-                            ))}
-                        </div>
-                    </FadeInSection>
-                </Section>
-
-                {/* 9. Investment Section */}
-                <Section id="investment">
-                    <FadeInSection>
-                        <SectionTitle preTitle={content.investmentPreTitle} subTitle={content.investmentSubtitle}>
-                            {content.investmentTitle}
-                        </SectionTitle>
-                        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
-                            <div className="lg:col-span-3 glassmorphism p-8 rounded-xl">
-                                <h3 className="text-2xl font-bold mb-6">{content.roundDetails}</h3>
-                                <div className="space-y-4 mb-8">
-                                    <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.seeking}</span><span className="text-2xl font-semibold">{formatCurrency(2, 'M')}</span></div>
-                                    <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.valuation}</span><span className="text-2xl font-semibold">{formatCurrency(12, 'M')} (Pre-money)</span></div>
-                                    <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.equityOffered}</span><span className="text-2xl font-semibold">15%</span></div>
-                                    <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.minInvestment}</span><span className="text-2xl font-semibold">{formatCurrency(50, 'K')}</span></div>
-                                </div>
-                                <div className="border-t border-slate-700 pt-6">
-                                    <h3 className="text-2xl font-bold mb-6">{content.targetsTitle}</h3>
-                                    <div className="space-y-4">
-                                        <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.annualRevenue}</span><span className="text-xl font-semibold">{formatCurrency(5, 'M')}</span></div>
-                                        <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.activeCustomersLabel}</span><span className="text-xl font-semibold">10,000+</span></div>
-                                        <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.gccMarkets}</span><span className="text-xl font-semibold">3 {content.cities}</span></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="lg:col-span-2 glassmorphism p-8 rounded-xl flex flex-col justify-center">
-                                <h3 className="text-2xl font-bold mb-6 text-center">{content.useOfFunds}</h3>
-                                <div className="space-y-6">
-                                    {useOfFundsData.map((entry, index) => (
-                                        <div key={entry.name}>
-                                            <div className="flex justify-between items-center mb-1 text-slate-300">
-                                                <span>{entry.name}</span>
-                                                <span className="font-semibold text-white">{entry.value}%</span>
+                                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center mb-12">
+                                        {[
+                                            { label: content.projectedRevenue, value: PROJECTION_DATA[activeProjection].revenue, prefix: currency === 'USD' ? '$' : '', suffix: `M${currency === 'AED' ? ' AED' : ''}`, convert: true },
+                                            { label: content.activeCustomers, value: PROJECTION_DATA[activeProjection].customers },
+                                            { label: content.monthlyOrders, value: PROJECTION_DATA[activeProjection].orders },
+                                            { label: content.grossMargin, value: PROJECTION_DATA[activeProjection].margin, suffix: '%' },
+                                            { label: content.virtualShelves, value: PROJECTION_DATA[activeProjection].virtualShelves },
+                                            { label: content.partners, value: PROJECTION_DATA[activeProjection].partners },
+                                        ].map(stat => (
+                                            <div key={stat.label} className="glassmorphism p-4 rounded-lg">
+                                                <p className="text-slate-400 text-sm mb-1">{stat.label}</p>
+                                                <p className={`text-2xl font-bold ${stat.value < 0 ? 'text-red-500' : 'text-[#93adf5]'}`}>
+                                                    <AnimatedCounter
+                                                        end={stat.convert ? convertCurrency(stat.value) : stat.value}
+                                                        prefix={stat.prefix || ''}
+                                                        suffix={stat.suffix || ''}
+                                                    />
+                                                </p>
                                             </div>
-                                            <div className="w-full bg-slate-700 rounded-full h-4">
-                                                <div
-                                                    className="h-4 rounded-full transition-all duration-500"
-                                                    style={{ width: `${entry.value}%`, backgroundColor: USE_OF_FUNDS_COLORS[index % USE_OF_FUNDS_COLORS.length] }}
+                                        ))}
+                                    </div>
+
+                                    <div className="h-96 glassmorphism p-4 rounded-xl">
+                                        <ResponsiveContainer width="100%" height="100%">
+                                            <AreaChart data={revenueChartData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+                                                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
+                                                <XAxis dataKey="name" stroke="#94A3B8" label={{ value: content.chartMonthsLabel, position: 'insideBottom', offset: -15, fill: '#94A3B8' }} />
+                                                <YAxis stroke="#94A3B8" label={{ value: content.chartRevenueLabel(currency), angle: -90, position: 'insideLeft', fill: '#94A3B8' }} />
+                                                <Tooltip contentStyle={{ backgroundColor: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(5px)' }} />
+                                                <Legend wrapperStyle={{ color: '#E2E8F0', paddingTop: '20px' }} />
+                                                <defs>
+                                                    <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="#517AE5" stopOpacity={0.8}/>
+                                                        <stop offset="95%" stopColor="#517AE5" stopOpacity={0}/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <Area type="monotone" dataKey="revenue" stroke="#517AE5" fillOpacity={1} fill="url(#colorRevenue)" name={content.projectedRevenue} />
+                                            </AreaChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                    <div className="text-center mt-12 no-print">
+                                        <button
+                                            onClick={() => {
+                                                setShowFinancials(true);
+                                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                            }}
+                                            className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg"
+                                        >
+                                            {content.view5YearProjections}
+                                        </button>
+                                    </div>
+                                </div>
+                            </FadeInSection>
+                        </Section>
+                        
+                        {/* 7. Problem & Solution Section */}
+                        <Section id="problem-solution">
+                            <FadeInSection>
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                                     <div>
+                                        <h2 className="text-3xl lg:text-4xl font-bold mb-4">{content.problemTitle}</h2>
+                                        <p className="text-slate-400 mb-8 text-lg">{content.problemSubtitle}</p>
+                                        <ul className="space-y-4">
+                                            {content.problems.map((item, i) => (
+                                                <li key={i} className="flex items-start">
+                                                    <svg className="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    <span className="text-slate-300">{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                     <div className="glassmorphism p-8 rounded-xl mt-8 lg:mt-0">
+                                        <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-green-400">{content.solutionTitle}</h2>
+                                        <p className="text-slate-300 mb-8 text-lg">{content.solutionSubtitle}</p>
+                                        <ul className="space-y-4">
+                                            {content.solutions.map((item, i) => (
+                                                <li key={i} className="flex items-start">
+                                                    <svg className="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    <span className="text-slate-200">{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </FadeInSection>
+                        </Section>
+
+                        {/* 8. Market Section */}
+                        <Section id="market" className="bg-black/25">
+                            <FadeInSection>
+                                <SectionTitle subTitle={content.marketSubtitle}>{content.marketTitle}</SectionTitle>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-center">
+                                    {content.marketStats.map((stat, i) => (
+                                        <div key={i} className="glassmorphism p-8 rounded-xl transform hover:-translate-y-2 transition-transform duration-300">
+                                            <p className="text-5xl font-bold text-[#517AE5] mb-4">
+                                                <AnimatedCounter 
+                                                    end={marketStatValues[i].value}
+                                                    prefix={marketStatValues[i].prefix || (currency === 'USD' ? '$' : '')}
+                                                    suffix={`${marketStatValues[i].unit || ''}${currency === 'AED' && (marketStatValues[i].unit === 'B' || marketStatValues[i].unit === 'M') ? ' AED' : ''}`}
                                                 />
-                                            </div>
+                                            </p>
+                                            <h3 className="text-xl font-semibold text-slate-300">{stat.label}</h3>
                                         </div>
                                     ))}
                                 </div>
-                            </div>
-                        </div>
-                    </FadeInSection>
-                </Section>
-                
-                {/* 10. CTA Section */}
-                <Section id="cta" className="bg-gradient-to-t from-black/50 to-transparent">
-                    <FadeInSection>
-                        <div className="text-center max-w-3xl mx-auto">
-                            <h2 className="text-4xl lg:text-5xl font-bold mb-4">{content.ctaTitle}</h2>
-                            <p className="text-slate-300 text-lg mb-8">{content.ctaSubtitle}</p>
-                            <div className="flex justify-center gap-4 no-print">
-                                <a href="https://calendly.com/njoober/30min" target="_blank" rel="noopener noreferrer" className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg">{content.scheduleMeeting}</a>
-                                <button onClick={() => setIsContactModalOpen(true)} className="border-2 border-slate-500 hover:bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-lg">{content.contactUs}</button>
-                            </div>
-                        </div>
-                    </FadeInSection>
-                </Section>
-            </main>
+                            </FadeInSection>
+                        </Section>
 
-            <footer className="py-8 bg-black/30 border-t border-slate-800">
-                <div className="container mx-auto px-6 text-center text-slate-400">
-                    <p>&copy; {new Date().getFullYear()} Part2Car.ae. {content.footerText}</p>
-                </div>
-            </footer>
-            
-            {isContactModalOpen && (
-                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[60] no-print" onClick={() => setIsContactModalOpen(false)}>
-                    <div
-                        className="glassmorphism rounded-xl p-8 max-w-lg w-full m-4 animate-fade-in-up"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-2xl font-bold">{content.modalTitle}</h3>
-                            <button onClick={() => setIsContactModalOpen(false)} className="text-slate-400 hover:text-white text-3xl leading-none">&times;</button>
-                        </div>
-                        <p className="text-slate-400 mb-6">{content.modalSubtitle}</p>
-                        <form className="space-y-4">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1">{content.fullName}</label>
-                                <input type="text" id="name" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]" />
-                            </div>
-                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1">{content.emailAddress}</label>
-                                <input type="email" id="email" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]" />
-                            </div>
-                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-1">{content.message}</label>
-                                <textarea id="message" rows={4} className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]"></textarea>
-                            </div>
-                            <button type="submit" className="w-full bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105">{content.sendMessage}</button>
-                        </form>
-                    </div>
-                </div>
-            )}
-
-            {isPartnersModalOpen && (
-                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[60] no-print" onClick={() => setIsPartnersModalOpen(false)}>
-                    <div
-                        className="glassmorphism rounded-xl p-8 max-w-2xl w-full m-4 animate-fade-in-up flex flex-col max-h-[90vh]"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="flex justify-between items-center mb-6 flex-shrink-0">
-                            <h3 className="text-2xl font-bold">{content.partnersModalTitle}</h3>
-                            <button onClick={() => setIsPartnersModalOpen(false)} className="text-slate-400 hover:text-white text-3xl leading-none">&times;</button>
-                        </div>
-                        <div className="overflow-y-auto">
-                            <div className="space-y-8">
-                                <div>
-                                    <h4 className="text-xl font-semibold mb-4 text-[#517AE5]">{content.insurancePartners}</h4>
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                                        {content.insurancePartnerNames.map(name => (
-                                            <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
-                                                <p className="text-slate-300 font-medium text-sm">{name}</p>
+                        {/* 9. Investment Section */}
+                        <Section id="investment">
+                            <FadeInSection>
+                                <SectionTitle preTitle={content.investmentPreTitle} subTitle={content.investmentSubtitle}>
+                                    {content.investmentTitle}
+                                </SectionTitle>
+                                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+                                    <div className="lg:col-span-3 glassmorphism p-8 rounded-xl">
+                                        <h3 className="text-2xl font-bold mb-6">{content.roundDetails}</h3>
+                                        <div className="space-y-4 mb-8">
+                                            <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.seeking}</span><span className="text-2xl font-semibold">{formatCurrency(2, 'M')}</span></div>
+                                            <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.valuation}</span><span className="text-2xl font-semibold">{formatCurrency(12, 'M')} (Pre-money)</span></div>
+                                            <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.equityOffered}</span><span className="text-2xl font-semibold">15%</span></div>
+                                            <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.minInvestment}</span><span className="text-2xl font-semibold">{formatCurrency(50, 'K')}</span></div>
+                                        </div>
+                                        <div className="border-t border-slate-700 pt-6">
+                                            <h3 className="text-2xl font-bold mb-6">{content.targetsTitle}</h3>
+                                            <div className="space-y-4">
+                                                <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.annualRevenue}</span><span className="text-xl font-semibold">{formatCurrency(5, 'M')}</span></div>
+                                                <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.activeCustomersLabel}</span><span className="text-xl font-semibold">10,000+</span></div>
+                                                <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.gccMarkets}</span><span className="text-xl font-semibold">3 {content.cities}</span></div>
                                             </div>
-                                        ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="lg:col-span-2 glassmorphism p-8 rounded-xl flex flex-col justify-center">
+                                        <h3 className="text-2xl font-bold mb-6 text-center">{content.useOfFunds}</h3>
+                                        <div className="space-y-6">
+                                            {useOfFundsData.map((entry, index) => (
+                                                <div key={entry.name}>
+                                                    <div className="flex justify-between items-center mb-1 text-slate-300">
+                                                        <span>{entry.name}</span>
+                                                        <span className="font-semibold text-white">{entry.value}%</span>
+                                                    </div>
+                                                    <div className="w-full bg-slate-700 rounded-full h-4">
+                                                        <div
+                                                            className="h-4 rounded-full transition-all duration-500"
+                                                            style={{ width: `${entry.value}%`, backgroundColor: USE_OF_FUNDS_COLORS[index % USE_OF_FUNDS_COLORS.length] }}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <h4 className="text-xl font-semibold mb-4 text-[#517AE5]">{content.globalShipping}</h4>
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                                        {content.shippingPartnerNames.map(name => (
-                                            <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
-                                                <p className="text-slate-300 font-medium text-sm">{name}</p>
+                            </FadeInSection>
+                        </Section>
+                        
+                        {/* 10. CTA Section */}
+                        <Section id="cta" className="bg-gradient-to-t from-black/50 to-transparent">
+                            <FadeInSection>
+                                <div className="text-center max-w-3xl mx-auto">
+                                    <h2 className="text-4xl lg:text-5xl font-bold mb-4">{content.ctaTitle}</h2>
+                                    <p className="text-slate-300 text-lg mb-8">{content.ctaSubtitle}</p>
+                                    <div className="flex justify-center gap-4 no-print">
+                                        <a href="https://calendly.com/njoober/30min" target="_blank" rel="noopener noreferrer" className="bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105 text-lg">{content.scheduleMeeting}</a>
+                                        <button onClick={() => setIsContactModalOpen(true)} className="border-2 border-slate-500 hover:bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-lg">{content.contactUs}</button>
+                                    </div>
+                                </div>
+                            </FadeInSection>
+                        </Section>
+                    </main>
+
+                    <footer className="py-8 bg-black/30 border-t border-slate-800">
+                        <div className="container mx-auto px-6 text-center text-slate-400">
+                            <div className="flex justify-center items-center space-x-6 mb-4">
+                                <a href="https://part2car.ae" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="Official Website">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/company/part2car/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn Profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <p>&copy; {new Date().getFullYear()} Part2Car.ae. {content.footerText}</p>
+                        </div>
+                    </footer>
+                    
+                    {isContactModalOpen && (
+                        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[60] no-print" onClick={() => setIsContactModalOpen(false)}>
+                            <div
+                                className="glassmorphism rounded-xl p-8 max-w-lg w-full m-4 animate-fade-in-up"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <div className="flex justify-between items-center mb-4">
+                                    <h3 className="text-2xl font-bold">{content.modalTitle}</h3>
+                                    <button onClick={() => setIsContactModalOpen(false)} className="text-slate-400 hover:text-white text-3xl leading-none">&times;</button>
+                                </div>
+                                <p className="text-slate-400 mb-6">{content.modalSubtitle}</p>
+                                <p className="text-amber-400/80 italic text-sm text-center mb-6 bg-amber-900/20 p-3 rounded-lg border border-amber-500/30">{content.modalBenefit}</p>
+                                <form className="space-y-4">
+                                    <div>
+                                        <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1">{content.fullName}</label>
+                                        <input type="text" id="name" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]" />
+                                    </div>
+                                     <div>
+                                        <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1">{content.emailAddress}</label>
+                                        <input type="email" id="email" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="mobile" className="block text-sm font-medium text-slate-300 mb-1">{content.mobileNumber}</label>
+                                        <input type="tel" id="mobile" className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]" />
+                                    </div>
+                                     <div>
+                                        <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-1">{content.message}</label>
+                                        <textarea id="message" rows={4} className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#517AE5]"></textarea>
+                                    </div>
+                                    <button type="submit" className="w-full bg-[#517AE5] hover:bg-[#4367c6] text-white font-semibold py-3 px-8 rounded-lg transition-transform duration-200 hover:scale-105">{content.sendMessage}</button>
+                                </form>
+                            </div>
+                        </div>
+                    )}
+
+                    {isPartnersModalOpen && (
+                        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[60] no-print" onClick={() => setIsPartnersModalOpen(false)}>
+                            <div
+                                className="glassmorphism rounded-xl p-8 max-w-2xl w-full m-4 animate-fade-in-up flex flex-col max-h-[90vh]"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <div className="flex justify-between items-center mb-6 flex-shrink-0">
+                                    <h3 className="text-2xl font-bold">{content.partnersModalTitle}</h3>
+                                    <button onClick={() => setIsPartnersModalOpen(false)} className="text-slate-400 hover:text-white text-3xl leading-none">&times;</button>
+                                </div>
+                                <div className="overflow-y-auto">
+                                    <div className="space-y-8">
+                                        <div>
+                                            <h4 className="text-xl font-semibold mb-4 text-[#517AE5]">{content.insurancePartners}</h4>
+                                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                                {content.insurancePartnerNames.map(name => (
+                                                    <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
+                                                        <p className="text-slate-300 font-medium text-sm">{name}</p>
+                                                    </div>
+                                                ))}
                                             </div>
-                                        ))}
+                                        </div>
+                                        <div>
+                                            <h4 className="text-xl font-semibold mb-4 text-[#517AE5]">{content.globalShipping}</h4>
+                                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                                {content.shippingPartnerNames.map(name => (
+                                                    <div key={name} className="bg-slate-800/50 p-3 rounded-lg text-center">
+                                                        <p className="text-slate-300 font-medium text-sm">{name}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="bg-slate-800/50 border border-slate-700 p-4 rounded-lg mt-8">
+                                        <h5 className="font-bold text-slate-200 mb-2">{content.partnersNoteTitle}</h5>
+                                        <p className="text-sm text-slate-400">{content.partnersNoteBody}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-slate-800/50 border border-slate-700 p-4 rounded-lg mt-8">
-                                <h5 className="font-bold text-slate-200 mb-2">{content.partnersNoteTitle}</h5>
-                                <p className="text-sm text-slate-400">{content.partnersNoteBody}</p>
-                            </div>
                         </div>
-                    </div>
-                </div>
-            )}
+                    )}
 
-            <CookieInvestorPopup 
-                isVisible={showCookiePopup}
-                onAccept={handleAcceptCookies}
-                content={{
-                    title: content.cookieTitle,
-                    message: content.cookieMessage,
-                    accept: content.cookieAccept
-                }}
-            />
+                    <CookieInvestorPopup 
+                        isVisible={showCookiePopup}
+                        onAccept={handleAcceptCookies}
+                        content={{
+                            title: content.cookieTitle,
+                            message: content.cookieMessage,
+                            accept: content.cookieAccept
+                        }}
+                    />
+                </>
+            )}
 
             {!isAuthenticated && <PasswordOverlay onSuccess={handleSuccessfulAuth} />}
         </div>
