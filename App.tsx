@@ -6,6 +6,7 @@ import CookieInvestorPopup from './components/CookieInvestorPopup';
 import PasswordOverlay from './components/PasswordOverlay';
 import FinancialProjections from './components/FinancialProjections';
 import PodcastPlayer from './components/PodcastPlayer';
+import BusinessCaseStudy from './components/BusinessCaseStudy';
 import { useOnScreen } from './hooks/useOnScreen';
 import type { ProjectionData } from './types';
 
@@ -23,6 +24,7 @@ const translations = {
         partnersModalTitle: "Our Valued Partners",
         comingSoon: "Coming Soon",
         newFeature: "In progress",
+        businessCaseStudy: "Business Case Study",
 
         // Hero Section
         heroPreTitle: "Series A Investment Opportunity",
@@ -212,6 +214,101 @@ const translations = {
             tooltipROI: "ROI",
             tooltipAgents: "Agents",
         },
+        caseStudy: {
+            title: "Business Case Study: The Investment Thesis for Part2Car.ae",
+            backToPitchDeck: "← Back to Pitch Deck",
+            subtitle: "A deep dive into a high-growth, technology-driven venture poised to dominate the $12B GCC automotive aftermarket.",
+            execSummaryTitle: "Executive Summary",
+            execSummaryBody: "Part2Car.ae presents a compelling, time-sensitive investment opportunity to digitize and dominate the fragmented, inefficient, and rapidly growing GCC automotive parts aftermarket. By leveraging a proprietary AI-powered B2B marketplace, we connect thousands of suppliers with workshops, unlocking immense value through efficiency, transparency, and data monetization. We are seeking $2M in Series A funding to scale our proven model across the UAE and into key GCC markets, projecting a significant ROI driven by strong network effects and multiple revenue streams. This is an opportunity to back a first-mover with a clear path to market leadership and profitability.",
+            keyMetrics: [
+                { title: "Target Market (GCC)", value: "12B", unit: "$", isCurrency: true },
+                { title: "Projected Y3 Revenue", value: "6.2M", unit: "$", isCurrency: true },
+                { title: "Series A Ask", value: "2M", unit: "$", isCurrency: true },
+                { title: "Projected 5Y ROI", value: "18%", unit: "" },
+            ],
+            
+            problemOpportunityTitle: "1. Problem & Opportunity",
+            problemOpportunitySubtitle: "A $12 Billion Market Paralyzed by Inefficiency",
+            problemBody: "The GCC's automotive aftermarket is a massive, essential industry. However, it operates on legacy systems, creating significant, quantifiable pain points:",
+            problemsList: [
+                { title: "Financial Drain", desc: "Workshops lose an estimated 15-20% of revenue due to parts sourcing delays and incorrect orders." },
+                { title: "Operational Bottlenecks", desc: "An average of 4-6 hours of skilled mechanic time is wasted per vehicle just on parts procurement." },
+                { title: "Supplier Fragmentation", desc: "Over 1000+ small-to-medium suppliers operate in silos, creating price opacity and inconsistent quality." },
+                { title: "Digital Void", desc: "With less than 5% digital penetration, the sector lags decades behind comparable B2B industries." },
+            ],
+            opportunityTitle: "Quantifying the Opportunity",
+            opportunityBody: "The inefficiency is not just a problem; it's a multi-billion dollar value creation opportunity. By solving these core issues, we can capture a significant share of the market by delivering tangible value.",
+            opportunityChartTitle: "Value Proposition: Market Size vs. Digital Penetration",
+
+            solutionTitle: "2. Proposed Solution",
+            solutionSubtitle: "A Vertically Integrated B2B Operating System",
+            solutionBody: "Part2Car.ae is not merely a marketplace. It is a three-layered ecosystem designed to be the central nervous system for the entire aftermarket value chain.",
+            solutionLayers: [
+                { title: "Layer 1: The AI Marketplace Core", desc: "The foundation is our B2B marketplace connecting buyers and sellers with AI-powered search, real-time pricing, and integrated logistics." },
+                { title: "Layer 2: The SaaS Toolkit", desc: "For suppliers and workshops, we provide a suite of tools (inventory management, CRM, analytics) that digitize their operations, creating stickiness and a recurring revenue stream." },
+                { title: "Layer 3: The Data Intelligence Layer", desc: "As transactions flow, we build an unparalleled data asset on parts velocity, pricing elasticity, and failure rates—a highly monetizable strategic advantage." },
+            ],
+
+            strategicAlignmentTitle: "3. Strategic Alignment",
+            strategicAlignmentSubtitle: "Capitalizing on Regional & Global Megatrends",
+            strategicAlignmentBody: "Our venture is perfectly positioned at the confluence of several powerful economic and technological trends, ensuring tailwinds for growth.",
+            alignmentPoints: [
+                { title: "Government Digital Transformation", desc: "Aligned with UAE Vision and KSA Vision 2030 goals for a diversified, digitally-driven economy." },
+                { title: "B2B E-commerce Boom", desc: "The global B2B e-commerce market is projected to hit $20 trillion. We are bringing this model to a virgin sector in the GCC." },
+                { title: "AI & Data Monetization", desc: "We are building a foundational data asset for the region's automotive sector, a key pillar of the future data economy." },
+                { title: "Logistics Infrastructure Maturity", desc: "Leveraging the world-class logistics network of the UAE as a launchpad for efficient regional distribution." },
+            ],
+
+            benefitsROITitle: "4. Expected Benefits & ROI",
+            benefitsROISubtitle: "Creating a Win-Win-Win Scenario",
+            benefitsBody: "Our model is designed to deliver quantifiable benefits across the value chain, leading to strong financial returns for investors.",
+            benefitsTableTitle: "Stakeholder Value Proposition",
+            benefitsHeaders: ["Stakeholder", "Primary Benefit", "Quantifiable Impact"],
+            benefitsRows: [
+                { stakeholder: "Workshops/Buyers", benefit: "Operational Efficiency", impact: "Up to 40% reduction in operational costs; 80% faster parts procurement." },
+                { stakeholder: "Suppliers/Sellers", benefit: "Market Access & Growth", impact: "Access to thousands of buyers; data-driven sales increase of 25%+" },
+                { stakeholder: "Investors", benefit: "Financial & Strategic Return", impact: "Projected 18% ROI, dominant position in a $12B market, strategic data asset." },
+            ],
+            financialROITitle: "Financial Return on Investment",
+            financialROIBody: "Our detailed financial model, based on conservative market penetration assumptions, projects a compelling return profile. Key highlights include:",
+            financialROIMetrics: [
+                { label: "5-Year Net ROI", value: "18%" },
+                { label: "Investor Payback Period", value: "~3.5 Years" },
+                { label: "Year 5 EBITDA Margin", value: "45%" },
+                { label: "Potential Exit Strategy", value: "Acquisition by major automotive group or larger B2B marketplace player within 5-7 years." },
+            ],
+
+            costRiskTimelineTitle: "5. Execution Plan: Cost, Risks & Timeline",
+            costRiskTimelineSubtitle: "A Phased, De-Risked Approach to Market Dominance",
+            costTitle: "Investment Ask & Use of Funds",
+            costBody: "We are seeking $2M in Series A funding to execute our 18-month growth plan. The capital will be strategically allocated to fuel technology development, market expansion, and operational scaling.",
+            timelineTitle: "18-Month Strategic Roadmap",
+            timelinePhases: [
+                { phase: "Phase 1 (Months 1-6)", title: "Foundation & Scale-Up", items: ["Scale UAE operations to 2,000+ workshops", "Enhance AI search & SaaS toolkit", "Strengthen logistics partnerships"] },
+                { phase: "Phase 2 (Months 7-12)", title: "KSA Market Entry", items: ["Launch operations in Riyadh & Jeddah", "Onboard first 100 Saudi suppliers", "Localize platform and support"] },
+                { phase: "Phase 3 (Months 13-18)", title: "Pan-GCC Expansion", items: ["Establish presence in Kuwait & Oman", "Launch advanced data analytics products", "Achieve regional brand leadership"] },
+            ],
+            riskTitle: "Risk Analysis & Mitigation Strategy",
+            riskTableHeaders: ["Risk Category", "Description", "Likelihood", "Impact", "Mitigation Strategy"],
+            riskTableRows: [
+                { category: "Market Adoption", desc: "Slow uptake by traditional, non-tech-savvy workshops.", likelihood: "Medium", impact: "Medium", mitigation: "Dedicated onboarding teams, tiered SaaS model (freemium), and strong partner incentives." },
+                { category: "Competition", desc: "Emergence of a well-funded competitor or retaliation from large incumbents.", likelihood: "Medium", impact: "High", mitigation: "Rapidly build network effects (our primary moat), secure supplier exclusivity, continuous tech innovation." },
+                { category: "Operational", desc: "Logistics and fulfillment challenges in new markets.", likelihood: "High", impact: "Medium", mitigation: "Hybrid logistics model (own fleet + 3PL partners), phased rollout, strong local operations teams." },
+                { category: "Execution", desc: "Failure to hit key milestones on roadmap due to internal factors.", likelihood: "Low", impact: "High", mitigation: "Experienced leadership team, agile development cycles, data-driven KPI tracking and management." },
+            ],
+
+            teamTitle: "The A-Team: Expertise-Driven Leadership",
+            teamBody: "Our success is driven by a founding team that combines deep industry knowledge with world-class technological expertise. (Note: Full founder bios and advisory board details available upon request).",
+            teamMembers: [
+                { name: "Founder & CEO", desc: "15+ years in automotive logistics and B2B sales in the GCC. Proven track record of scaling startups." },
+                { name: "Co-Founder & CTO", desc: "Lead AI/ML engineer with experience from top tech firms. Expert in building scalable marketplaces." },
+                { name: "Head of Operations", desc: "Supply chain veteran with extensive experience managing large-scale logistics networks in the Middle East." },
+            ],
+
+            conclusionTitle: "Conclusion: An Unparalleled Opportunity",
+            conclusionBody: "Part2Car.ae is at the inflection point of technology and market need. We are not just building a company; we are creating the digital infrastructure for an entire industry. This is a unique opportunity to partner with a seasoned team to capture a dominant position in a massive, underserved market. We invite you to join us in shaping the future of automotive commerce in the Middle East.",
+            ctaButton: "Schedule a Private Briefing",
+        },
     },
     ar: {
         // Meta & Buttons
@@ -224,6 +321,7 @@ const translations = {
         partnersModalTitle: "شركاؤنا الكرام",
         comingSoon: "قريباً",
         newFeature: "قيد التنفيذ",
+        businessCaseStudy: "دراسة حالة العمل",
 
         // Hero Section
         heroPreTitle: "فرصة استثمارية (الفئة أ)",
@@ -413,6 +511,101 @@ const translations = {
             tooltipROI: "العائد على الاستثمار",
             tooltipAgents: "الوكلاء",
         },
+        caseStudy: {
+            title: "دراسة حالة العمل: الأطروحة الاستثمارية لـ Part2Car.ae",
+            backToPitchDeck: "→ العودة إلى العرض التقديمي",
+            subtitle: "نظرة متعمقة على مشروع قائم على التكنولوجيا وعالي النمو، يستعد للسيطرة على سوق ما بعد البيع للسيارات في دول مجلس التعاون الخليجي الذي تبلغ قيمته 12 مليار دولار.",
+            execSummaryTitle: "ملخص تنفيذي",
+            execSummaryBody: "تقدم Part2Car.ae فرصة استثمارية جذابة وحساسة للوقت لرقمنة والسيطرة على سوق قطع غيار السيارات المجزأ وغير الفعال وسريع النمو في دول مجلس التعاون الخليجي. من خلال الاستفادة من سوق B2B الخاص بنا والمدعوم بالذكاء الاصطناعي، نربط آلاف الموردين بورش العمل، مما يطلق قيمة هائلة من خلال الكفاءة والشفافية واستثمار البيانات. نسعى للحصول على 2 مليون دولار في جولة تمويل (الفئة أ) لتوسيع نطاق نموذجنا المثبت في جميع أنحاء الإمارات العربية المتحدة وإلى الأسواق الرئيسية في دول مجلس التعاون الخليجي، مع توقع عائد استثمار كبير مدفوع بتأثيرات الشبكة القوية وتدفقات الإيرادات المتعددة. هذه فرصة لدعم المحرك الأول بمسار واضح لقيادة السوق والربحية.",
+            keyMetrics: [
+                { title: "حجم السوق المستهدف (الخليج)", value: "12B", unit: "$", isCurrency: true },
+                { title: "إيرادات السنة الثالثة المتوقعة", value: "6.2M", unit: "$", isCurrency: true },
+                { title: "المبلغ المطلوب (الفئة أ)", value: "2M", unit: "$", isCurrency: true },
+                { title: "العائد المتوقع على الاستثمار (5 سنوات)", value: "18%", unit: "" },
+            ],
+
+            problemOpportunityTitle: "١. المشكلة والفرصة",
+            problemOpportunitySubtitle: "سوق بقيمة ١٢ مليار دولار يعاني من عدم الكفاءة",
+            problemBody: "يعتبر سوق ما بعد البيع للسيارات في دول مجلس التعاون الخليجي صناعة ضخمة وأساسية. ومع ذلك، فإنه يعمل بأنظمة قديمة، مما يخلق نقاط ضعف كبيرة وقابلة للقياس:",
+            problemsList: [
+                { title: "استنزاف مالي", desc: "تخسر ورش العمل ما يقدر بنحو ١٥-٢٠٪ من الإيرادات بسبب تأخيرات في الحصول على قطع الغيار والطلبات غير الصحيحة." },
+                { title: "عقبات تشغيلية", desc: "يتم إهدار ما متوسطه ٤-٦ ساعات من وقت الميكانيكي الماهر لكل مركبة فقط في شراء قطع الغيار." },
+                { title: "تجزئة الموردين", desc: "يعمل أكثر من ١٠٠٠ مورد صغير ومتوسط ​​في صوامع، مما يخلق غموضًا في الأسعار وجودة غير متسقة." },
+                { title: "فراغ رقمي", desc: "مع اختراق رقمي أقل من ٥٪، يتخلف القطاع بعقود عن الصناعات المماثلة بين الشركات." },
+            ],
+            opportunityTitle: "قياس الفرصة",
+            opportunityBody: "إن عدم الكفاءة ليس مجرد مشكلة؛ بل هو فرصة لخلق قيمة بمليارات الدولارات. من خلال حل هذه المشكلات الأساسية، يمكننا الاستحواذ على حصة كبيرة من السوق من خلال تقديم قيمة ملموسة.",
+            opportunityChartTitle: "عرض القيمة: حجم السوق مقابل الاختراق الرقمي",
+            
+            solutionTitle: "٢. الحل المقترح",
+            solutionSubtitle: "نظام تشغيل متكامل رأسيًا للأعمال (B2B)",
+            solutionBody: "Part2Car.ae ليس مجرد سوق. إنه نظام بيئي ثلاثي الطبقات مصمم ليكون الجهاز العصبي المركزي لسلسلة القيمة الكاملة لما بعد البيع.",
+            solutionLayers: [
+                { title: "الطبقة الأولى: نواة السوق بالذكاء الاصطناعي", desc: "الأساس هو سوق B2B الخاص بنا الذي يربط المشترين والبائعين ببحث مدعوم بالذكاء الاصطناعي، وأسعار فورية، ولوجستيات متكاملة." },
+                { title: "الطبقة الثانية: مجموعة أدوات SaaS", desc: "للموردين وورش العمل، نقدم مجموعة من الأدوات (إدارة المخزون، CRM، التحليلات) التي ترقمن عملياتهم، مما يخلق ولاءً وتدفق إيرادات متكرر." },
+                { title: "الطبقة الثالثة: طبقة ذكاء البيانات", desc: "مع تدفق المعاملات، نبني أصل بيانات لا مثيل له حول سرعة دوران القطع، ومرونة التسعير، ومعدلات الأعطال - وهي ميزة استراتيجية قابلة للاستثمار بشكل كبير." },
+            ],
+
+            strategicAlignmentTitle: "٣. التوافق الاستراتيجي",
+            strategicAlignmentSubtitle: "الاستفادة من الاتجاهات الكبرى الإقليمية والعالمية",
+            strategicAlignmentBody: "يقع مشروعنا في موقع مثالي عند التقاء العديد من الاتجاهات الاقتصادية والتكنولوجية القوية، مما يضمن رياحًا دافعة للنمو.",
+            alignmentPoints: [
+                { title: "التحول الرقمي الحكومي", desc: "يتماشى مع رؤية الإمارات ورؤية السعودية ٢٠٣٠ لأهداف اقتصاد متنوع وموجه رقميًا." },
+                { title: "ازدهار التجارة الإلكترونية B2B", desc: "من المتوقع أن يصل سوق التجارة الإلكترونية العالمي B2B إلى ٢٠ تريليون دولار. نحن نقدم هذا النموذج لقطاع بكر في دول مجلس التعاون الخليجي." },
+                { title: "الذكاء الاصطناعي واستثمار البيانات", desc: "نقوم ببناء أصل بيانات أساسي لقطاع السيارات في المنطقة، وهو ركيزة أساسية لاقتصاد البيانات المستقبلي." },
+                { title: "نضج البنية التحتية اللوجستية", desc: "الاستفادة من الشبكة اللوجستية عالمية المستوى في الإمارات كمنصة إطلاق لتوزيع إقليمي فعال." },
+            ],
+
+            benefitsROITitle: "٤. الفوائد المتوقعة والعائد على الاستثمار",
+            benefitsROISubtitle: "خلق سيناريو مربح للجميع",
+            benefitsBody: "تم تصميم نموذجنا لتقديم فوائد قابلة للقياس عبر سلسلة القيمة، مما يؤدي إلى عوائد مالية قوية للمستثمرين.",
+            benefitsTableTitle: "عرض القيمة لأصحاب المصلحة",
+            benefitsHeaders: ["صاحب المصلحة", "الفائدة الأساسية", "التأثير القابل للقياس"],
+            benefitsRows: [
+                { stakeholder: "ورش العمل/المشترون", benefit: "الكفاءة التشغيلية", impact: "تخفيض يصل إلى ٤٠٪ في التكاليف التشغيلية؛ شراء قطع أسرع بنسبة ٨٠٪." },
+                { stakeholder: "الموردون/البائعون", benefit: "الوصول إلى السوق والنمو", impact: "الوصول إلى آلاف المشترين؛ زيادة المبيعات المعتمدة على البيانات بنسبة ٢٥٪ +." },
+                { stakeholder: "المستثمرون", benefit: "عائد مالي واستراتيجي", impact: "عائد استثمار متوقع بنسبة ١٨٪، مكانة مهيمنة في سوق بقيمة ١٢ مليار دولار، أصل بيانات استراتيجي." },
+            ],
+            financialROITitle: "العائد المالي على الاستثمار",
+            financialROIBody: "نموذجنا المالي المفصل، القائم على افتراضات متحفظة لاختراق السوق، يتوقع ملف عائد جذاب. تشمل أبرز النقاط:",
+            financialROIMetrics: [
+                { label: "صافي العائد على الاستثمار لمدة ٥ سنوات", value: "١٨٪" },
+                { label: "فترة استرداد استثمار المستثمر", value: "حوالي ٣.٥ سنوات" },
+                { label: "هامش الأرباح قبل الفوائد والضرائب والإهلاك في السنة الخامسة", value: "٤٥٪" },
+                { label: "استراتيجية الخروج المحتملة", value: "الاستحواذ من قبل مجموعة سيارات كبرى أو لاعب سوق B2B أكبر في غضون ٥-٧ سنوات." },
+            ],
+
+            costRiskTimelineTitle: "٥. خطة التنفيذ: التكلفة والمخاطر والجدول الزمني",
+            costRiskTimelineSubtitle: "نهج مرحلي ومنخفض المخاطر للسيطرة على السوق",
+            costTitle: "الطلب الاستثماري واستخدام الأموال",
+            costBody: "نسعى للحصول على تمويل بقيمة ٢ مليون دولار في جولة (الفئة أ) لتنفيذ خطة النمو الخاصة بنا لمدة ١٨ شهرًا. سيتم تخصيص رأس المال بشكل استراتيجي لدفع تطوير التكنولوجيا والتوسع في السوق وتوسيع نطاق العمليات.",
+            timelineTitle: "خارطة طريق استراتيجية لمدة ١٨ شهرًا",
+            timelinePhases: [
+                { phase: "المرحلة ١ (الأشهر ١-٦)", title: "التأسيس والتوسع", items: ["توسيع عمليات الإمارات لتشمل أكثر من ٢٠٠٠ ورشة عمل", "تحسين البحث بالذكاء الاصطناعي ومجموعة أدوات SaaS", "تعزيز الشراكات اللوجستية"] },
+                { phase: "المرحلة ٢ (الأشهر ٧-١٢)", title: "دخول سوق المملكة العربية السعودية", items: ["إطلاق العمليات في الرياض وجدة", "ضم أول ١٠٠ مورد سعودي", "توطين المنصة والدعم"] },
+                { phase: "المرحلة ٣ (الأشهر ١٣-١٨)", title: "التوسع في دول مجلس التعاون الخليجي", items: ["تأسيس وجود في الكويت وعمان", "إطلاق منتجات تحليلات بيانات متقدمة", "تحقيق ريادة العلامة التجارية الإقليمية"] },
+            ],
+            riskTitle: "تحليل المخاطر واستراتيجية التخفيف",
+            riskTableHeaders: ["فئة المخاطر", "الوصف", "الاحتمالية", "التأثير", "استراتيجية التخفيف"],
+            riskTableRows: [
+                { category: "تبني السوق", desc: "تباطؤ في تبني الحل من قبل ورش العمل التقليدية وغير المتمرسة تقنيًا.", likelihood: "متوسط", impact: "متوسط", mitigation: "فرق تأهيل مخصصة، نموذج SaaS متدرج (freemium)، وحوافز قوية للشركاء." },
+                { category: "المنافسة", desc: "ظهور منافس ممول جيدًا أو رد فعل من الشركات الكبرى القائمة.", likelihood: "متوسط", impact: "مرتفع", mitigation: "بناء تأثيرات الشبكة بسرعة (حصننا الأساسي)، تأمين حصرية الموردين، والابتكار التكنولوجي المستمر." },
+                { category: "التشغيل", desc: "تحديات لوجستية وتنفيذية في الأسواق الجديدة.", likelihood: "مرتفع", impact: "متوسط", mitigation: "نموذج لوجستي هجين (أسطول خاص + شركاء 3PL)، طرح مرحلي، فرق عمليات محلية قوية." },
+                { category: "التنفيذ", desc: "الفشل في تحقيق المعالم الرئيسية في خارطة الطريق بسبب عوامل داخلية.", likelihood: "منخفض", impact: "مرتفع", mitigation: "فريق قيادي من ذوي الخبرة، دورات تطوير رشيقة، تتبع وإدارة مؤشرات الأداء الرئيسية المستندة إلى البيانات." },
+            ],
+            
+            teamTitle: "الفريق المتميز: قيادة قائمة على الخبرة",
+            teamBody: "نجاحنا مدفوع بفريق مؤسس يجمع بين المعرفة العميقة بالصناعة والخبرة التكنولوجية العالمية. (ملاحظة: السير الذاتية الكاملة للمؤسسين وتفاصيل المجلس الاستشاري متاحة عند الطلب).",
+            teamMembers: [
+                { name: "المؤسس والرئيس التنفيذي", desc: "أكثر من 15 عامًا في لوجستيات السيارات ومبيعات B2B في دول مجلس التعاون الخليجي. سجل حافل في توسيع نطاق الشركات الناشئة." },
+                { name: "الشريك المؤسس والمدير التقني", desc: "مهندس رائد في الذكاء الاصطناعي/التعلم الآلي مع خبرة من كبرى شركات التكنولوجيا. خبير في بناء الأسواق القابلة للتطوير." },
+                { name: "رئيس العمليات", desc: "خبير في سلسلة التوريد مع خبرة واسعة في إدارة شبكات لوجستية واسعة النطاق في الشرق الأوسط." },
+            ],
+
+            conclusionTitle: "الخاتمة: فرصة لا مثيل لها",
+            conclusionBody: "تقف Part2Car.ae عند نقطة التقاء التكنولوجيا وحاجة السوق. نحن لا نبني شركة فحسب؛ بل ننشئ البنية التحتية الرقمية لصناعة بأكملها. هذه فرصة فريدة للشراكة مع فريق متمرس لاحتلال مكانة مهيمنة في سوق ضخم وغير مخدوم. ندعوكم للانضمام إلينا في تشكيل مستقبل تجارة السيارات في الشرق الأوسط.",
+            ctaButton: "حدد موعدًا لجلسة إحاطة خاصة",
+        },
     }
 };
 
@@ -510,6 +703,7 @@ const App: React.FC = () => {
 
     const [isAuthenticated, setIsAuthenticated] = useState(checkAuth);
     const [showFinancials, setShowFinancials] = useState(false);
+    const [showCaseStudy, setShowCaseStudy] = useState(false);
     const [activeProjection, setActiveProjection] = useState('Year 1');
     const [language, setLanguage] = useState<'en' | 'ar'>('en');
     const [currency, setCurrency] = useState<'USD' | 'AED'>('USD');
@@ -589,6 +783,18 @@ const App: React.FC = () => {
         }));
     }, [currency]);
 
+    if (showCaseStudy) {
+        return (
+            <BusinessCaseStudy
+                onBack={() => setShowCaseStudy(false)}
+                language={language}
+                currency={currency}
+                content={content.caseStudy}
+                useOfFundsData={useOfFundsData}
+            />
+        );
+    }
+    
     return (
         <div className="text-white">
             <Header 
@@ -920,6 +1126,10 @@ const App: React.FC = () => {
                                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                     </svg>
                                 </a>
+                                <button onClick={() => {
+                                    setShowCaseStudy(true);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }} className="text-slate-400 hover:text-white transition-colors font-medium">{content.businessCaseStudy}</button>
                             </div>
                             <p>&copy; {new Date().getFullYear()} Part2Car.ae. {content.footerText}</p>
                         </div>
