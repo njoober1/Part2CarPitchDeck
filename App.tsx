@@ -27,7 +27,7 @@ const translations = {
         businessCaseStudy: "Business Case Study",
 
         // Hero Section
-        heroPreTitle: "Series A Investment Opportunity",
+        heroPreTitle: "Pre-Series A Investment Opportunity",
         heroTitle: "Revolutionizing the UAE's Automotive Parts Market & Shipping Globally",
         heroSubtitle: "Part2Car.ae is the region's first comprehensive B2B automotive parts marketplace, connecting suppliers, workshops, and retailers through innovative technology.",
         
@@ -131,8 +131,8 @@ const translations = {
         
         // Investment Section
         investmentTitle: "Investment Opportunity",
-        investmentPreTitle: "Series A",
-        investmentSubtitle: "Series A round to accelerate growth and regional expansion",
+        investmentPreTitle: "Pre-Series A",
+        investmentSubtitle: "Pre-Series A round to accelerate growth and regional expansion",
         roundDetails: "Round Details",
         seeking: "Seeking:",
         valuation: "Valuation:",
@@ -219,11 +219,11 @@ const translations = {
             backToPitchDeck: "← Back to Pitch Deck",
             subtitle: "A deep dive into a high-growth, technology-driven venture poised to dominate the $12B GCC automotive aftermarket.",
             execSummaryTitle: "Executive Summary",
-            execSummaryBody: "Part2Car.ae presents a compelling, time-sensitive investment opportunity to digitize and dominate the fragmented, inefficient, and rapidly growing GCC automotive parts aftermarket. By leveraging a proprietary AI-powered B2B marketplace, we connect thousands of suppliers with workshops, unlocking immense value through efficiency, transparency, and data monetization. We are seeking $2M in Series A funding to scale our proven model across the UAE and into key GCC markets, projecting a significant ROI driven by strong network effects and multiple revenue streams. This is an opportunity to back a first-mover with a clear path to market leadership and profitability.",
+            execSummaryBody: "Part2Car.ae presents a compelling, time-sensitive investment opportunity to digitize and dominate the fragmented, inefficient, and rapidly growing GCC automotive parts aftermarket. By leveraging a proprietary AI-powered B2B marketplace, we connect thousands of suppliers with workshops, unlocking immense value through efficiency, transparency, and data monetization. We are seeking $0.9M in Pre-Series A funding to scale our proven model across the UAE and into key GCC markets, projecting a significant ROI driven by strong network effects and multiple revenue streams. This is an opportunity to back a first-mover with a clear path to market leadership and profitability.",
             keyMetrics: [
                 { title: "Target Market (GCC)", value: "12B", unit: "$", isCurrency: true },
                 { title: "Projected Y3 Revenue", value: "6.2M", unit: "$", isCurrency: true },
-                { title: "Series A Ask", value: "2M", unit: "$", isCurrency: true },
+                { title: "Pre-Series A Ask", value: "0.9M", unit: "$", isCurrency: true },
                 { title: "Projected 5Y ROI", value: "18%", unit: "" },
             ],
             
@@ -280,8 +280,8 @@ const translations = {
 
             costRiskTimelineTitle: "5. Execution Plan: Cost, Risks & Timeline",
             costRiskTimelineSubtitle: "A Phased, De-Risked Approach to Market Dominance",
-            costTitle: "Investment Ask & Use of Funds",
-            costBody: "We are seeking $2M in Series A funding to execute our 18-month growth plan. The capital will be strategically allocated to fuel technology development, market expansion, and operational scaling.",
+            costTitle: "Pre-Series A Ask & Use of Funds",
+            costBody: "We are seeking $0.9M in Pre-Series A funding to execute our 18-month growth plan. The capital will be strategically allocated to fuel technology development, market expansion, and operational scaling.",
             timelineTitle: "18-Month Strategic Roadmap",
             timelinePhases: [
                 { phase: "Phase 1 (Months 1-6)", title: "Foundation & Scale-Up", items: ["Scale UAE operations to 2,000+ workshops", "Enhance AI search & SaaS toolkit", "Strengthen logistics partnerships"] },
@@ -324,7 +324,7 @@ const translations = {
         businessCaseStudy: "دراسة حالة العمل",
 
         // Hero Section
-        heroPreTitle: "فرصة استثمارية (الفئة أ)",
+        heroPreTitle: "فرصة استثمارية (ما قبل الفئة أ)",
         heroTitle: "ثورة في سوق قطع غيار السيارات في الإمارات، مع الشحن العالمي",
         heroSubtitle: "Part2Car.ae هي أول سوق شامل لقطع غيار السيارات بين الشركات في المنطقة، وتربط الموردين وورش العمل وتجار التجزئة من خلال التكنولوجيا المبتكرة.",
         
@@ -428,8 +428,8 @@ const translations = {
         
         // Investment Section
         investmentTitle: "فرصة استثمارية",
-        investmentPreTitle: "الفئة أ",
-        investmentSubtitle: "جولة استثمارية (الفئة أ) لتسريع النمو والتوسع الإقليمي",
+        investmentPreTitle: "ما قبل الفئة أ",
+        investmentSubtitle: "جولة استثمارية (ما قبل الفئة أ) لتسريع النمو والتوسع الإقليمي",
         roundDetails: "تفاصيل الجولة",
         seeking: "المبلغ المطلوب:",
         valuation: "التقييم:",
@@ -516,11 +516,11 @@ const translations = {
             backToPitchDeck: "→ العودة إلى العرض التقديمي",
             subtitle: "نظرة متعمقة على مشروع قائم على التكنولوجيا وعالي النمو، يستعد للسيطرة على سوق ما بعد البيع للسيارات في دول مجلس التعاون الخليجي الذي تبلغ قيمته 12 مليار دولار.",
             execSummaryTitle: "ملخص تنفيذي",
-            execSummaryBody: "تقدم Part2Car.ae فرصة استثمارية جذابة وحساسة للوقت لرقمنة والسيطرة على سوق قطع غيار السيارات المجزأ وغير الفعال وسريع النمو في دول مجلس التعاون الخليجي. من خلال الاستفادة من سوق B2B الخاص بنا والمدعوم بالذكاء الاصطناعي، نربط آلاف الموردين بورش العمل، مما يطلق قيمة هائلة من خلال الكفاءة والشفافية واستثمار البيانات. نسعى للحصول على 2 مليون دولار في جولة تمويل (الفئة أ) لتوسيع نطاق نموذجنا المثبت في جميع أنحاء الإمارات العربية المتحدة وإلى الأسواق الرئيسية في دول مجلس التعاون الخليجي، مع توقع عائد استثمار كبير مدفوع بتأثيرات الشبكة القوية وتدفقات الإيرادات المتعددة. هذه فرصة لدعم المحرك الأول بمسار واضح لقيادة السوق والربحية.",
+            execSummaryBody: "تقدم Part2Car.ae فرصة استثمارية جذابة وحساسة للوقت لرقمنة والسيطرة على سوق قطع غيار السيارات المجزأ وغير الفعال وسريع النمو في دول مجلس التعاون الخليجي. من خلال الاستفادة من سوق B2B الخاص بنا والمدعوم بالذكاء الاصطناعي، نربط آلاف الموردين بورش العمل، مما يطلق قيمة هائلة من خلال الكفاءة والشفافية واستثمار البيانات. نسعى للحصول على 0.9 مليون دولار في جولة تمويل (ما قبل الفئة أ) لتوسيع نطاق نموذجنا المثبت في جميع أنحاء الإمارات العربية المتحدة وإلى الأسواق الرئيسية في دول مجلس التعاون الخليجي، مع توقع عائد استثمار كبير مدفوع بتأثيرات الشبكة القوية وتدفقات الإيرادات المتعددة. هذه فرصة لدعم المحرك الأول بمسار واضح لقيادة السوق والربحية.",
             keyMetrics: [
                 { title: "حجم السوق المستهدف (الخليج)", value: "12B", unit: "$", isCurrency: true },
                 { title: "إيرادات السنة الثالثة المتوقعة", value: "6.2M", unit: "$", isCurrency: true },
-                { title: "المبلغ المطلوب (الفئة أ)", value: "2M", unit: "$", isCurrency: true },
+                { title: "المبلغ المطلوب (ما قبل الفئة أ)", value: "0.9M", unit: "$", isCurrency: true },
                 { title: "العائد المتوقع على الاستثمار (5 سنوات)", value: "18%", unit: "" },
             ],
 
@@ -577,8 +577,8 @@ const translations = {
 
             costRiskTimelineTitle: "٥. خطة التنفيذ: التكلفة والمخاطر والجدول الزمني",
             costRiskTimelineSubtitle: "نهج مرحلي ومنخفض المخاطر للسيطرة على السوق",
-            costTitle: "الطلب الاستثماري واستخدام الأموال",
-            costBody: "نسعى للحصول على تمويل بقيمة ٢ مليون دولار في جولة (الفئة أ) لتنفيذ خطة النمو الخاصة بنا لمدة ١٨ شهرًا. سيتم تخصيص رأس المال بشكل استراتيجي لدفع تطوير التكنولوجيا والتوسع في السوق وتوسيع نطاق العمليات.",
+            costTitle: "الطلب الاستثماري (ما قبل الفئة أ) واستخدام الأموال",
+            costBody: "نسعى للحصول على تمويل بقيمة 0.9 مليون دولار في جولة (ما قبل الفئة أ) لتنفيذ خطة النمو الخاصة بنا لمدة ١٨ شهرًا. سيتم تخصيص رأس المال بشكل استراتيجي لدفع تطوير التكنولوجيا والتوسع في السوق وتوسيع نطاق العمليات.",
             timelineTitle: "خارطة طريق استراتيجية لمدة ١٨ شهرًا",
             timelinePhases: [
                 { phase: "المرحلة ١ (الأشهر ١-٦)", title: "التأسيس والتوسع", items: ["توسيع عمليات الإمارات لتشمل أكثر من ٢٠٠٠ ورشة عمل", "تحسين البحث بالذكاء الاصطناعي ومجموعة أدوات SaaS", "تعزيز الشراكات اللوجستية"] },
@@ -1060,9 +1060,9 @@ const App: React.FC = () => {
                                     <div className="lg:col-span-3 glassmorphism p-8 rounded-xl">
                                         <h3 className="text-2xl font-bold mb-6">{content.roundDetails}</h3>
                                         <div className="space-y-4 mb-8">
-                                            <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.seeking}</span><span className="text-2xl font-semibold">{formatCurrency(2, 'M')}</span></div>
+                                            <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.seeking}</span><span className="text-2xl font-semibold">{formatCurrency(0.9, 'M')}</span></div>
                                             <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.valuation}</span><span className="text-2xl font-semibold">{formatCurrency(12, 'M')} (Pre-money)</span></div>
-                                            <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.equityOffered}</span><span className="text-2xl font-semibold">15%</span></div>
+                                            <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.equityOffered}</span><span className="text-2xl font-semibold">7.5%</span></div>
                                             <div className="flex justify-between items-baseline"><span className="text-slate-400">{content.minInvestment}</span><span className="text-2xl font-semibold">{formatCurrency(50, 'K')}</span></div>
                                         </div>
                                         <div className="border-t border-slate-700 pt-6">

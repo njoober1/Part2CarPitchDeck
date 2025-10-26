@@ -68,7 +68,7 @@ const BusinessCaseStudy: React.FC<BusinessCaseStudyProps> = ({ onBack, currency,
                                 <p className="text-3xl font-bold text-white">
                                     {metric.isCurrency && currency === 'USD' ? metric.unit : ''}
                                     {metric.value}
-                                    {metric.isCurrency && currency === 'AED' ? 'B AED' : metric.isCurrency ? 'B' : '%'}
+                                    {metric.isCurrency && currency === 'AED' ? ' AED' : ''}
                                 </p>
                             </div>
                         ))}
