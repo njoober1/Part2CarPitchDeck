@@ -11,7 +11,14 @@ const PasswordOverlay: React.FC<PasswordOverlayProps> = ({ onSuccess }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const lowerCasePassword = password.toLowerCase();
-    if (lowerCasePassword === 'wicsif2025' || lowerCasePassword === 'aaa') {
+    const validPasswords = [
+      'wicsif2025',
+      'aaa',
+      'itamarunderstandthepotentialandwantstoinvest',
+      'itamar'
+    ];
+
+    if (validPasswords.includes(lowerCasePassword)) {
       setError('');
       onSuccess();
     } else {
